@@ -22,18 +22,19 @@
         </a>
         <a class="brand" href="#">Learing Experience</a>
         <div class="nav-collapse">
-          <ul class="nav">
-            <li><%= link_to "Browse Products" %></li>
-            <li><%= link_to "Price List" %></li>
-            <li><%= link_to "Contact Us" %></li>
-            <li><%= link_to "Cart" %></li>
+          <ul class="nav nav-pills nav-stacked">
+            <li class="divider-vertical"><%= link_to "Browse Products" %></li>
+            <li class="divider-vertical"><%= link_to "Price List" %></li>
+            <li class="divider-vertical"><%= link_to "Contact Us" %></li>
+            <li class="divider-vertical"><%= link_to "Cart" %></li>
           </ul>
-          <div id="user_nav">
+          <div  style="style="margin-right:100px;">
            <% if user_signed_in? %>
              Sign in as <%= current_user.username %>. Not you?
-             <%= link_to "Sign out", destroy_user_session_path, :method => :delete %>
+             <%= link_to "Sign out", destroy_user_session_path,:class => "btn btn-primary",  :method => :delete %>
              <% else %>
-             <%= link_to "Sign up", new_user_registration_path %> or <%= link_to "Log in", new_user_session_path %>
+             <%= link_to "Sign up", new_user_registration_path,  :class => "btn btn-primary" %>  
+              <%= link_to "Sign in ", new_user_session_path,:class => "btn" %>
           <% end %>
          </div>
         </div>
