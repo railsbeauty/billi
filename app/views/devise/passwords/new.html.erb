@@ -1,12 +1,15 @@
-<h2>Forgot your password?</h2>
+ <div style="width:100p;height:180px;border:1px solid #D8DEE2;border-radius: 8px 8px 8px 8px; solid;margin-left:350px;margin-top:50px;background-color:whilte;font-weight: bold;box-shadow: 0 0 00px 0px #D4C0AA inset;">
+
+<h4 class="auth-form-header">Forgot password</h4>
 
 <%= form_for(resource, :as => resource_name, :url => password_path(resource_name), :html => { :method => :post }) do |f| %>
   <%= devise_error_messages! %>
 
-  <div><%= f.label :email %><br />
+  <div style="margin-left:50px; margin-top:10px;><%= f.label :email %><br />
   <%= f.email_field :email, :autofocus => true %></div>
 
-  <div><%= f.submit "Send me reset password instructions" %></div>
+   <div style="margin-left:50px;margin-top:10px;"> <%= f.submit "Submit",:class => "btn" %></div>
 <% end %>
 
-<%= render "devise/shared/links" %>
+
+</div>

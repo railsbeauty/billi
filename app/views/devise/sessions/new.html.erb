@@ -1,24 +1,24 @@
 <div class="span8">
- <div style="width:210p;height:320px;border:1px solid #D8DEE2;border-radius: 8px 8px 8px 8px; solid;margin-left:350px;margin-top:50px;background-color:whilte;font-weight: bold;box-shadow: 0 0 00px 0px #D4C0AA inset;">
+ <div style="width:210p;height:300px;border:1px solid #D8DEE2;border-radius: 8px 8px 8px 8px; solid;margin-left:350px;margin-top:50px;background-color:whilte;font-weight: bold;box-shadow: 0 0 00px 0px #D4C0AA inset;">
 
 
 <div class="auth-form-header"> <h4>Sign in</h4> </div>
 
 <%= form_for(resource, :as => resource_name, :url => session_path(resource_name)) do |f| %>
-  <div style="margin-left:25px;> <%= f.label :email %><br />
-  <%= f.email_field :email, :autofocus => true %></div>
+  <div style="margin-left:40px;margin-top:10px;> <%= f.label :email or  f.label :username %><br />
+  <%= f.email_field :email, :size => "80%", :autofocus => true %></div>
 
-<div style="margin-left:25px;> <%= f.label :password %><br />
+<div style="margin-left:40px;length:150px> <%= f.label :password %><br />
   <%= f.password_field :password %></div>
 
-  <div style="margin-left:25px;"><%= f.submit "Sign in" %></div>
+  <div style="margin-left:40px;"><%= f.submit "Log in", :class => "btn" %></div>
 
   <% if devise_mapping.rememberable? -%>
-<div style="margin-left:25px;><%= f.check_box :remember_me %> <%= f.label :remember_me %></div>
+<div style="margin-left:40px;"><%= f.check_box :remember_me %> <%= f.label :remember_me %></div>
   <% end -%>
   <% end %>
 
-<div style="margin-left:25px;><%= render "devise/shared/links" %></div>
+<div style="margin-left:40px;"><%= render "devise/shared/links" %></div>
 
 </div>
 </div>
