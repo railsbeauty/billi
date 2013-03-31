@@ -34,6 +34,7 @@ class DeviseCreateUsers < ActiveRecord::Migration
       # t.string :authentication_token
 
       t.boolean :is_admin
+      t.boolean :is_active
 
       t.timestamps
     end

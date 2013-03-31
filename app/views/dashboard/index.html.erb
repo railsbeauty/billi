@@ -1,16 +1,17 @@
 <h2>Admin Area</h2>
 <table  class="table table-bordered">
-	<tr class= "success">
+	<tr class= "">
 		<th> User Email </th>
 		<th> User Registered Time</th>
 		<th> Login Count</th>
 		<th> Active/Deactive Users</th>
 	</tr>
 	 <% @users.each do |user| %>
-	<tr class="success">
+	<tr class="">
 		<td><%= user.email %></td>
 		<td><%= user.created_at %></td>
 		<td><%= user. sign_in_count %></td>
+		<td> </td>
 	</tr>
 	<% end %>
 </table>
