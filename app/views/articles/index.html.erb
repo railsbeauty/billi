@@ -1,33 +1,40 @@
 <%- model_class = Article -%>
-<div class="page-header">
+<div class="">
   <h1><%=t '.title', :default => model_class.model_name.human.pluralize %></h1>
 </div>
 <table class="table table-striped">
   <thead>
     <tr>
-      <th><%= model_class.human_attribute_name(:id) %></th>
-      <th><%= model_class.human_attribute_name(:title) %></th>
+      
       <th><%= model_class.human_attribute_name(:body) %></th>
       <th><%= model_class.human_attribute_name(:created_at) %></th>
-      <th><%=t '.actions', :default => t("helpers.actions") %></th>
+      
     </tr>
   </thead>
   <tbody>
     <% @articles.each do |article| %>
       <tr>
-        <td><%= link_to article.id, article_path(article) %></td>
-        <td><%= article.title %></td>
+       <div class="entry-title"></div><td><%= article.title %></td></div>
+       </tr>
+       <tr>
         <td><%= article.body %></td>
+      </tr>
+      <tr>
         <td><%=l article.created_at %></td>
-        <td>
+      </tr>
+      <tr>
+      <td>
           <%= link_to t('.edit', :default => t("helpers.links.edit")),
-                      edit_article_path(article), :class => 'btn btn-mini' %>
+                      edit_article_path(article), :class => 'btn btn-warning btn' %>
+      
           <%= link_to t('.destroy', :default => t("helpers.links.destroy")),
                       article_path(article),
                       :method => :delete,
                       :data => { :confirm => t('.confirm', :default => t("helpers.links.confirm", :default => 'Are you sure?')) },
-                      :class => 'btn btn-mini btn-danger' %>
-        </td>
+                      :class => 'btn  btn-danger' %>
+        
+        <a href="#" class="btn btn-inverse btn- active"><i class="icon-white"></i> Back</a>
+       </td>
       </tr>
     <% end %>
   </tbody>
@@ -35,4 +42,4 @@
 
 <%= link_to t('.new', :default => t("helpers.links.new")),
             new_article_path,
-            :class => 'btn btn-primary' %>
+            :class => 'btn btn-large btn-primary' %>

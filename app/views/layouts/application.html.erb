@@ -26,16 +26,18 @@
             <li class="divider-vertical"><%= link_to "Browse Products" %></li>
             <li class="divider-vertical"><%= link_to "Price List" %></li>
             <li class="divider-vertical"><%= link_to "Contact Us" %></li>
-            <li class="divider-vertical"><%= link_to "Cart" %></li>
+            <li class="divider-vertical"><%= link_to "Blog", articles_path %></li>    
           </ul>
-          <div  style="style="margin-right:100px;">
+          <ul class = "nav pull-right">
            <% if user_signed_in? %>
-             Sign in as <%= current_user.username %>. Not you?
-             <%= link_to "Sign out", destroy_user_session_path,:class => "btn btn-primary",  :method => :delete %>
-             <% else %>
-             <%= link_to "Sign up", new_user_registration_path,  :class => "btn btn-primary" %>  
-              <%= link_to "Sign in ", new_user_session_path,:class => "btn" %>
-          <% end %>
+           <li><%= link_to current_user.username %></li>
+            <li><%= link_to "Sign Out", destroy_user_session_path, :class => "btn btn-primary", method: :delete %></li>
+            <% else %>
+            <li><%= link_to "Sign Up", new_user_registration_path %></li>
+            <li><%= link_to "Sign In", new_user_session_path %></li>
+          <%end%>
+      </ul>
+
          </div>
         </div>
       </div>

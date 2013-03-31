@@ -9,6 +9,8 @@
   <dt><strong><%= model_class.human_attribute_name(:body) %>:</strong></dt>
   <dd><%= @article.body %></dd>
 </dl>
+<h3>Comments</h3>
+<%= render partial: 'articles/comment', collection: @article.comments %>
 
 <div class="form-actions">
   <%= link_to t('.back', :default => t("helpers.links.back")),

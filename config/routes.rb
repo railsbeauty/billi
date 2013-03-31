@@ -1,8 +1,12 @@
 Mau::Application.routes.draw do
   devise_for :users
 
-  resources :articles
+  
   root :to => 'articles#index'
+  resources :dashboard
+  resources :articles do
+  resources :comments
+end
   # The priority is based upon order of creation:
   # first created -> highest priority.
 

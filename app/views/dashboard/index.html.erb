@@ -1,0 +1,15 @@
+<h2>Admin Area</h2>
+<table  class="table table-bordered">
+	<tr>
+		<th> User Email </th>
+		<th> User Registered Time</th>
+		<th> Login Count</th>
+	</tr>
+	 <% @users.each do |user| %>
+	<tr>
+		<td><%= user.email %></td>
+		<td><%= user.created_at %></td>
+		<td><%= user. sign_in_count %></td>
+	</tr>
+	<% end %>
+</table>
