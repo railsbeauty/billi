@@ -10,10 +10,12 @@
 	</tr>
 	 <% @users.each do |user| %>
 	<tr class="">
+		<% if !user.is_admin %> 
 		<td><%= user.email %></td>
 		<td><%= user.created_at %></td>
 		<td><%= user. sign_in_count %></td>
 		<td> </td>
+		<% end %>
 	</tr>
 	<% end %>
 </table>
