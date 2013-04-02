@@ -1,0 +1,34 @@
+.navbar-inner {
+  background-color: #1763A4; /* fallback color, place your own */
+
+  /* Gradients for modern browsers, replace as you see fit */
+  background-image: -moz-linear-gradient(top, #1763A4, #1763A4);
+  background-image: -ms-linear-gradient(top, #1763A4, #1763A4);
+  background-image: -webkit-gradient(linear, 0 0, 0 100%, from(#1763A4), to(#1763A4));
+  background-image: -webkit-linear-gradient(top, #1763A4, #1763A4);
+  background-image: -o-linear-gradient(top, #1763A4, #1763A4);
+  background-image: linear-gradient(top, #1763A4, #1763A4);
+  background-repeat: repeat-x;
+
+  /* IE8-9 gradient filter */
+  filter: progid:DXImageTransform.Microsoft.gradient(startColorstr='#1763A4', endColorstr='#222222', GradientType=0);
+}
+
+.navbar .brand {
+    color: #FFFFFF;
+    display: block;
+    float: left;
+    font-size: 20px;
+    font-weight: 200;
+    margin-left: -20px;
+    padding: 10px 20px;
+    text-shadow: 0 0px 0 #FFFFFF;
+}
+
+.navbar .nav > li > a {
+    color: #FFFFFF;
+    float: none;
+    padding: 10px 15px;
+    text-decoration: none;
+    text-shadow: 0 0px 0 #FFFFFF;
+}
