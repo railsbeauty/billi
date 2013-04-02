@@ -32,3 +32,10 @@
     text-decoration: none;
     text-shadow: 0 0px 0 #FFFFFF;
 }
+
+.navbar .nav > li > a:hover {
+    background-color: transparent;
+    color: #FFFFFF;
+    text-decoration: blink;
+    
+}
