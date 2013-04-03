@@ -6,15 +6,13 @@
   <thead>
     <tr>
       
-      <th><%= model_class.human_attribute_name(:body) %></th>
-      <th><%= model_class.human_attribute_name(:created_at) %></th>
       
     </tr>
   </thead>
   <tbody>
     <% @articles.each do |article| %>
       <tr>
-       <div class="entry-title"></div><td><%= article.title %></td></div>
+       <td><%= article.title %></td>
        </tr>
        <tr>
         <td><%= article.body %></td>
@@ -33,13 +31,10 @@
                       :data => { :confirm => t('.confirm', :default => t("helpers.links.confirm", :default => 'Are you sure?')) },
                       :class => 'btn  btn-danger' %>
         
-        <a href="#" class="btn btn-inverse btn- active"><i class="icon-white"></i> Back</a>
+        <a href="#" class="btn btn-primary"><i class="icon-white"></i> View Article</a>
        </td>
       </tr>
     <% end %>
   </tbody>
 </table>
-
-<%= link_to t('.new', :default => t("helpers.links.new")),
-            new_article_path,
-            :class => 'btn btn-large btn-primary' %>
+<%= link_to "Create new Article", new_article_path, :class => 'btn btn-large btn-primary' %>
