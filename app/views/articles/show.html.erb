@@ -13,13 +13,7 @@
 <%= render partial: 'articles/comment', collection: @article.comments %>
 
 <div class="form-actions">
-  <%= link_to t('.back', :default => t("helpers.links.back")),
-              articles_path, :class => 'btn'  %>
-  <%= link_to t('.edit', :default => t("helpers.links.edit")),
-              edit_article_path(@article), :class => 'btn' %>
-  <%= link_to t('.destroy', :default => t("helpers.links.destroy")),
-              article_path(@article),
-              :method => 'delete',
-              :data => { :confirm => t('.confirm', :default => t("helpers.links.confirm", :default => 'Are you sure?')) },
-              :class => 'btn btn-danger' %>
+  <%= link_to "back",articles_path, :class => 'btn btn-inverse'  %>
+  <%= link_to "edit", edit_article_path(@article), :class => 'btn btn-warning btn' %>
+  <%= link_to "delete",article_path(@article),:method => :delete,:confirm => 'Are you sure?',:class => 'btn  btn-danger' %>
 </div>
