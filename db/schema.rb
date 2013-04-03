@@ -11,11 +11,9 @@
 #
 # It's strongly recommended to check this file into your version control system.
 
-<<<<<<< HEAD
+
 ActiveRecord::Schema.define(:version => 20130321194354) do
-=======
-ActiveRecord::Schema.define(:version => 20130315195157) do
->>>>>>> 3c7e4e9b2262fd12b6a0a3c4765e2fdd6af5fe70
+
 
   create_table "articles", :force => true do |t|
     t.string   "title"
@@ -24,7 +22,7 @@ ActiveRecord::Schema.define(:version => 20130315195157) do
     t.datetime "updated_at", :null => false
   end
 
-<<<<<<< HEAD
+
   create_table "comments", :force => true do |t|
     t.text     "content"
     t.integer  "user_id"
@@ -54,6 +52,5 @@ ActiveRecord::Schema.define(:version => 20130315195157) do
   add_index "users", ["email"], :name => "index_users_on_email", :unique => true
   add_index "users", ["reset_password_token"], :name => "index_users_on_reset_password_token", :unique => true
 
-=======
->>>>>>> 3c7e4e9b2262fd12b6a0a3c4765e2fdd6af5fe70
+
 end
