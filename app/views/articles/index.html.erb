@@ -8,7 +8,8 @@
     <div style="border: 1px solid #51702E;border-radius: 4px 4px 4px 4px;margin: 0 0 20px; padding: 20px 20px 10px;">
        <div style="color:#51702E"><h2><%= article.title %></h2></div>
        <div style="color:#666666"> <%= article.created_at %></div>  
-       <div> <%= truncate(article.body, :length => 500, :separator => ' ') %></div>         
+       <div> <%= truncate(article.body, :length => 500, :separator => ' ') %></div>  
+       
      <%= link_to "edit",edit_article_path(article), :class => 'btn btn-warning btn' %>
      <%= link_to "delete",article_path(article),:method => :delete,:confirm => 'Are you sure?',:class => 'btn  btn-danger' %>
      <%= link_to "view article",article_path(article), :class => 'btn btn-primary' %> 
