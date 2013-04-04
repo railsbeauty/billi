@@ -2,30 +2,19 @@
 <div class="">
   <h1><%=t '.title', :default => model_class.model_name.human.pluralize %></h1>
 </div>
-<table class=" table">
-  <thead>
-    <tr>
-    </tr>
-  </thead>
-  <tbody>
+
+<div style="border: 1px solid #1763A4;border-radius: 4px 4px 4px 4px;margin: 0 0 20px; padding: 20px 20px 10px;">
+
     <% @articles.each do |article| %>
-      <tr>
-       <td><%= article.title %></td>
-       </tr>
-       <tr>
-        <td><%= article.body %></td>
-      </tr>
-      <tr>
-        <td><%=l article.created_at %></td>
-      </tr>
-      <tr>
-      <td>
+    <div style="border: 1px solid #51702E;border-radius: 4px 4px 4px 4px;margin: 0 0 20px; padding: 20px 20px 10px;">
+       <div style="color:#51702E"><h2><%= article.title %></h2></div>
+       <div style="color:#666666"> <%= article.created_at %></div>  
+       <div> <%= truncate(article.body, :length => 500, :separator => ' ') %></div>  
+       
      <%= link_to "edit",edit_article_path(article), :class => 'btn btn-warning btn' %>
      <%= link_to "delete",article_path(article),:method => :delete,:confirm => 'Are you sure?',:class => 'btn  btn-danger' %>
-      <%= link_to "view article",article_path(article), :class => 'btn btn-primary' %>
-       </td>
-      </tr>
+     <%= link_to "view article",article_path(article), :class => 'btn btn-primary' %> 
+     </li>
+     </div>
     <% end %>
-  </tbody>
-</table>
 <%= link_to "Create new Article", new_article_path, :class => 'btn btn-large btn-primary' %>
