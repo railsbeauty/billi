@@ -3,10 +3,10 @@
   <h1><%=t '.title', :default => model_class.model_name.human.pluralize %></h1>
 </div>
 
-<div style="border: 1px solid #1763A4;border-radius: 4px 4px 4px 4px;margin: 0 0 20px; padding: 20px 20px 10px;">
+<div style="border: 4px solid #1763A4;border-radius: 4px 4px 4px 4px;margin: 0 0 20px; padding: 20px 20px 10px;">
 
     <% @articles.each do |article| %>
-    <div style="border: 1px solid #51702E;border-radius: 4px 4px 4px 4px;margin: 0 0 20px; padding: 20px 20px 10px;">
+    <div style="border: 1px solid #51702E;border-radius: 4px 4px 4px 4px;margin: 0 0 20px; padding: 20px 20px 10px;height:280px">
        <div style="color:#51702E"><h2><%= article.title %></h2></div>
        <div style="color:#666666"> <%= article.created_at %></div> 
        <div> <%= truncate(article.body, :length => 500, :separator => ' ') %></div>  
