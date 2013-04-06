@@ -1,19 +1,20 @@
-<%- model_class = Article -%>
-<div class="page-header">
-  <h1><%=t '.title', :default => model_class.model_name.human %></h1>
+
+<div style="border: 0px solid #1763A4;border-radius: 4px 4px 4px 4px;margin: 0 0 20px; padding: 20px 20px 10px; background: none repeat scroll 0 0 #66c9ee;">
+
+<div style="border-bottom: none:border: 0px solid #666666;border-radius: 4px 4px 4px 4px;margin: 0 0 20px; padding: 20px 20px 10px;; background: none repeat scroll 0 0 #FFFFFF ">
+<div style="color:#51702E"><h2><%= @article.title %></h2></div>
+<div style="color:#666666; margin-top:10px"> <%= @article.created_at %></div> 
+ <hr style="border: 1px solid #2e77bb;">
+<div><%= @article.body %></div>
 </div>
-<div style="border: 2px solid #666666;border-radius: 4px 4px 4px 4px;margin: 0 0 20px; padding: 20px 20px 10px; background: none repeat scroll 0 0 #ffffff;">
-<dl class="horizontal">
-  <dd><%= @article.title %></dd>
-  <dd><%= @article.body %></dd>
-</dl>
+
 <div class="form">
   <%= link_to "back",articles_path, :class => 'btn btn-inverse'  %>
   <%= link_to "edit", edit_article_path(@article), :class => 'btn btn-warning btn' %>
   <%= link_to "delete",article_path(@article),:method => :delete,:confirm => 'Are you sure?',:class => 'btn  btn-danger' %>
 </div>
-
+</div>
 <h3>Comments</h3>
 <%= render partial: 'articles/comment', collection: @article.comments %>
-</div>
+
 
