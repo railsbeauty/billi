@@ -48,16 +48,33 @@
     </div>
   </div>
 
-  <div class="container">
+
+  
+<div class="container">
     <div class="row">
-      <div class="span9"><%= yield %></div>
-      <div class="span3">
-        <% if user_signed_in? %>
-        
-        
-        <% end %>
+      <div class="span9">
+        <%= bootstrap_flash %>
+        <%= yield %>
       </div>
-    </div>
-  </div>
-</body>
-</html>
+      <div class="span4">
+        <div class="well sidebar-nav">
+          <ul class="nav nav-list">
+            <li class="nav-header">Sidebar</li>
+            <li><%= link_to "News", "/path1"  %></li>
+            <li><%= link_to "Recent", "/path2"  %></li>
+            <li><%= link_to "Hot Topics", "/path3"  %></li>
+          </ul>
+        </div><!--/.well -->
+      </div><!--/span-->
+    </div><!--/row-->
+
+  <footer>
+   
+  </footer>
+
+</div> <!-- /container -->
+
+<!-- Javascripts
+================================================== -->
+<!-- Placed at the end of the document so the pages load faster -->
+<%= javascript_include_tag "application" %>
