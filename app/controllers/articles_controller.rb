@@ -13,7 +13,7 @@ class ArticlesController < ApplicationController
 
     def create
       @article = Article.new(params[:article])
-      @article.user_id = params[:user_id]
+      @article.user = current_user
       @article.save
       redirect_to article_path(@article)
     end
