@@ -1,8 +1,8 @@
 
 <div sytle="margin-left:350px;margin-top:100px;">
 <h2>Dashboard</h2>
-<table  class="table table-bordered" style="background-color:#66C9EE;">
-	<tr style="background-color:#82B548;color:white;">
+<table  class="table table-bordered">
+	<tr style="background-color:#66C9EE;color:white;">
 		<th>User Email</th>
 		<th> User Registered Time</th>
 		<th> Login Count</th>
@@ -10,12 +10,12 @@
 	</tr>
 	 <% @users.each do |user| %>
 	<tr class="">
-		<% if !user.is_admin %> 
+		 
 		<td><%= user.email %></td>
 		<td><%= user.created_at %></td>
 		<td><%= user. sign_in_count %></td>
 		<td> </td>
-		<% end %>
+		
 	</tr>
 	<% end %>
 </table>

@@ -8,14 +8,16 @@
 <% @articles.each do |article| %>
   <div style=" border-bottom: none:border: 1px solid #666666;border-radius: 1px 1px 1px 1px;margin: 0 0 20px; padding: 20px 20px 10px;height:280px; background: none repeat scroll 0 0 #FFFFFF ">
 
-  <div style="color:#51702E"><h2><%= article.title %></h2></div>
+  
+  <div style="font-size: 3em"> <%= link_to article.title, article_path(article) %></div>
    <div id="tabs"> 
    <ul id="tabs">
-   <li><div style="color:#666666">  <%= article.created_at %></div></li>
-    <li> <div style="color:#4895d1">  <%= article.user.username if article.user %></div></li>
+   <li><div style="color:#666666; font-size: 1.4em;">  <%= article.created_at %></div></li>
+    <li> <div style="color:#4895d1; font-size: 1.4em">  <%= article.user.username if article.user %></div></li>
+    <li><div style="color:#CCD600; font-size: 1.4em;"> Comments <%  %></div></li>
    </ul>
  </div>
-    <hr style="border: 1px solid #FA9300; margin-top:35px">
+    <hr style="border: 1px solid #2e77bb; margin-top:35px">
     <div style="margin-top:10px; color:"> <%= truncate(article.body, :length => 500, :separator => ' ') %></div>  
     <div style="margin-top:35px">
     <% if current_user.try(:is_admin) %>
