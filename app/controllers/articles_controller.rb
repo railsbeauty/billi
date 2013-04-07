@@ -1,6 +1,6 @@
 class ArticlesController < ApplicationController
 	def index
-		@articles = Article.all
+		@articles = Article.all(:order => "created_at DESC")
 	end
 
     def show
@@ -13,7 +13,7 @@ class ArticlesController < ApplicationController
 
     def create
       @article = Article.new(params[:article])
-      @article.user = current_user
+      @article.user_id = current_user.id
       @article.save
       redirect_to article_path(@article)
     end
