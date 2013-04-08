@@ -34,7 +34,7 @@
 }
 
 .navbar .nav > li > a:hover {
-    background-color: transparent;
+    background-color: #82B548;
     color: #FFFFFF;
     text-decoration: blink;
     
@@ -56,8 +56,8 @@
  float: left
  }
 
-
-li.hover
-{
-background-color: #82B548;
-}
+.nav > li > a:hover {
+    background-color: #82B548;
+    color: #FFFFFF;
+    text-decoration: blink;
+  }
