@@ -34,7 +34,7 @@
 }
 
 .navbar .nav > li > a:hover {
-    background-color: transparent;
+    background-color: #82B548;
     color: #FFFFFF;
     text-decoration: blink;
     
@@ -56,24 +56,8 @@
  float: left
  }
 
-#content {
-    float:left;
-}
-
-#mapCanvas img {
-    max-width: none;
-}
-
-#maincont{
-    margin-top: 42px;
-}
-
-#toggleSidebar {
-    float:left;
-    color:#779DD7;
-    padding:2px 4px;
-}
-
-#sidebar{
-    float:left;   
-}
+.nav > li > a:hover {
+    background-color: #82B548;
+    color: #FFFFFF;
+    text-decoration: blink;
+  }
