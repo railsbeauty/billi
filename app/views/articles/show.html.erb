@@ -25,5 +25,13 @@
 <% end %>
 <%= render partial: 'articles/comment', collection: @article.comments %>
 
+<%= form_for ([@article, @article.comments.build]) do |f| %>
+  <div class="field">
+    <%= f.text_area :content %>
+  </div>
+  <div class="actions">
+    <%= f.submit "Submit" %>
+  </div>
+<% end %>
 
 
