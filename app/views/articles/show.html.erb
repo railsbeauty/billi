@@ -14,7 +14,6 @@
 <div style="font-size: 1.2em"><%= @article.body %></div>
 </div>
 
-
 <div class="form">
   <%= link_to "back",articles_path, :class => 'btn btn-inverse'  %>
   <% if current_user.try (:is_admin) %>

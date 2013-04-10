@@ -21,6 +21,8 @@ ActiveRecord::Schema.define(:version => 20130405085020) do
     t.integer  "user_id"
   end
 
+  add_index "articles", ["created_at"], :name => "index_articles_on_created_at"
+
   create_table "comments", :force => true do |t|
     t.text     "content"
     t.integer  "user_id"
