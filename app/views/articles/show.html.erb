@@ -23,10 +23,13 @@
 </div>
 </div>
 
+
+<div style="border: 2px solid #66c9ee;border-radius: 0px 0px 0px 0px;margin: 0 0 20px; padding: 20px 20px 10px; background: none repeat scroll 0 0 #ffffff; width: 85%">
 <% unless @article.comments.empty? %>
 <h3>Comments (<%= @article.comments.size %>)</h3>
 <% end %>
 <%= render :partial => 'comment_form' %>
+<hr style="border: 1px solid #66C9EE;">
 <% @article.comments.each do |c| %>
 <% unless c.nil? %>?
 <%=  render partial: 'articles/comment', :locals => { :comment => c } %>
