@@ -1,0 +1,9 @@
+<%= form_for ([@article, @article.comments.build]) do |f| %>
+ <%= f.hidden_field :article_id %>
+  <div class="field">
+    <%= f.text_area :content, :style => "width:740px; height:100px;" %>
+  </div>
+  <div class="actions">
+    <%= f.submit "Submit" %>
+  </div>
+<% end %>
