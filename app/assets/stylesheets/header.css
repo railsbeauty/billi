@@ -34,9 +34,30 @@
 }
 
 .navbar .nav > li > a:hover {
-    background-color: transparent;
+    background-color: #82B548;
     color: #FFFFFF;
     text-decoration: blink;
     
 }
 
+#tabs ul {
+ margin-left: 0;
+ padding-left: 0;
+ display: inline;
+ } 
+
+ #tabs ul li {
+ margin-left: 0;
+ margin-bottom: 110;
+ padding: 2px 15px 5px;
+ border: 0px solid #666666;
+ list-style: none;
+ 
+ float: left
+ }
+
+.nav > li > a:hover {
+    background-color: #82B548;
+    color: #FFFFFF;
+    text-decoration: blink;
+  }

@@ -1,3 +1,4 @@
+
 <!DOCTYPE html>
 <html>
 <head>
@@ -20,14 +21,15 @@
           <span class="icon-bar"></span>
           <span class="icon-bar"></span>
         </a>
-        <a class="brand" href="#">Learning Experience</a>
+
+        <div> <a class="brand" href="#"> <h4>Learning Experience </h4></a></div>
         <div class="nav-collapse">
-          <ul class="nav nav-pills nav-stacked">
-            <li class=""><%= link_to "Rails" %></li>
+          <ul class="nav nav-pills nav-stacked" style="font-size: 1.2em;font-weight: normal;">
             <li class=""><%= link_to "Ruby" %></li>
-            <li class=""><%= link_to "Java Script" %></li>
-            <li class=""><%= link_to "Backbone.js" %></li>
-            <li class=""><%= link_to "Java Script" %></li>
+            <li class=""><%= link_to "Rails" %></li>
+            <li class=""><%= link_to "JavaScript" %></li>
+            <li class=""><%= link_to "Jquery" %></li>
+            <li class=""><%= link_to "BackboneJs" %></li>
             <li class=""><%= link_to "Videos" %></li>
             <li class=""><%= link_to "Blog", articles_path %></li>    
           </ul>
@@ -47,17 +49,38 @@
       </div>
     </div>
   </div>
-
-  <div class="container">
+<div class="container">
     <div class="row">
-      <div class="span9"><%= yield %></div>
-      <div class="span3">
-        <% if user_signed_in? %>
-        
-        
-        <% end %>
+      <div class="span9">
+        <%= bootstrap_flash %>
+        <%= yield %>
       </div>
     </div>
-  </div>
-</body>
-</html>
+     <div class="span3" style="position:fixed; right:45px; border: 3px solid #66C9EE;border-radius: 4px 4px 4px 4px;margin: 0 0 20px; padding: 20px 20px 10px;height:400px; background:  #FFFFFF">   
+
+        <div style="color: #33383D;font-size: 1.3em;font-weight: bold;margin-bottom: 5px;text-transform: uppercase;">
+          <ul class="nav nav-list">
+           Latest Articles
+            <li><%= link_to "News", "/path1"  %></li>
+            <li><%= link_to "Recent Articles", "/path2"  %></li>
+            <li><%= link_to "Hot Articles", "/path3"  %></li>
+             <li><%= link_to "News", "/path1"  %></li>
+            <li><%= link_to "Recent Articles", "/path2"  %></li>
+            <li><%= link_to "Hot Articles", "/path3"  %></li>
+             <li><%= link_to "News", "/path1"  %></li>
+            <li><%= link_to "Recent Articles", "/path2"  %></li>
+            <li><%= link_to "Hot Articles", "/path3"  %></li>
+             <li><%= link_to "News", "/path1"  %></li>
+            <li><%= link_to "Recent Articles", "/path2"  %></li>
+            <li><%= link_to "Hot Articles", "/path3"  %></li>
+          </ui> 
+        </div>
+      </div><!--/span-->
+  <footer>
+   
+  </footer>
+<!-- Javascripts
+
+<!-- Placed at the end of the document so the pages load faster -->
+<%= javascript_include_tag "application" %>
+

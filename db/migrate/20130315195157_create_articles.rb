@@ -5,5 +5,6 @@ class CreateArticles < ActiveRecord::Migration
       t.text  :body	
       t.timestamps
     end
+    add_index :articles, [:user_id, :created_at]
   end
 end
