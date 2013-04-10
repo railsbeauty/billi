@@ -20,18 +20,24 @@
   <%= link_to "delete",article_path(@article),:method => :delete,:confirm => 'Are you sure?',:class => 'btn  btn-danger' %>
 </div>
 </div>
+
+
+<%= render partial: 'articles/comment', collection: @article.comments %>
+<%= form_for ([@article, @article.comments.build]) do |f| %>
+  <div class="">
+    <%= f.text_area :content, :style => "width:760px; height:120px" %>
+  </div>
+  <div class="actions">
+    <%= f.submit "Submit", :class => "btn btn" %>
+  </div>
+<% end %>
+
+
 <% unless @article.comments.empty? %>
 <h3>Comments (<%= @article.comments.size %>)</h3>
 <% end %>
-<%= render partial: 'articles/comment', collection: @article.comments %>
 
-<%= form_for ([@article, @article.comments.build]) do |f| %>
-  <div class="field">
-    <%= f.text_area :content %>
-  </div>
-  <div class="actions">
-    <%= f.submit "Submit" %>
-  </div>
-<% end %>
+
+
 
 

@@ -57,7 +57,15 @@
  }
 
 .nav > li > a:hover {
-    background-color: #82B548;
+    background-color: #66C9EE;
     color: #FFFFFF;
     text-decoration: blink;
   }
+
+  element.style {
+    height: 132px;
+    width: 759px;
+}
+body, input, select, textarea, button {
+    font: 13px/1.4 Helvetica,arial,freesans,clean,sans-serif;
+}
