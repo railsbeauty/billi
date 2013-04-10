@@ -3,7 +3,7 @@
 
 <div style="border-bottom: none:border: 0px solid #666666;border-radius: 4px 4px 4px 4px;margin: 0 0 20px; padding: 20px 20px 10px;; background: none repeat scroll 0 0 #FFFFFF ">
 <div style="color:#51702E"><h2><%= @article.title %></h2></div>
-<div id="tabs"> 
+<div id="tabs">
    <ul id="tabs">
    <li><div style="color:#666666; font-size: 1.4em;">  <%= @article.created_at.in_time_zone("Asia/Calcutta") %></div></li>
     <li> <div style="color:#4895d1; font-size: 1.4em;">  <%= @article.user.username if @article.user %></div></li>
@@ -16,11 +16,19 @@
 
 <div class="form">
   <%= link_to "back",articles_path, :class => 'btn btn-inverse'  %>
+  <% if current_user.try (:is_admin) %>
   <%= link_to "edit", edit_article_path(@article), :class => 'btn btn-warning btn' %>
   <%= link_to "delete",article_path(@article),:method => :delete,:confirm => 'Are you sure?',:class => 'btn  btn-danger' %>
+  <% end %>
 </div>
 </div>
-<h3>Comments</h3>
-<%= render partial: 'articles/comment', collection: @article.comments %>
 
-
+<% unless @article.comments.empty? %>
+<h3>Comments (<%= @article.comments.size %>)</h3>
+<% end %>
+<%= render :partial => 'comment_form' %>
+<% @article.comments.each do |c| %>
+<% unless c.nil? %>?
+<%=  render partial: 'articles/comment', :locals => { :comment => c } %>
+<%  end %>
+<% end %>

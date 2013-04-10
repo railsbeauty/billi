@@ -1,4 +1,4 @@
-<<<<<<< HEAD
+
 # encoding: UTF-8
 # This file is auto-generated from the current state of the database. Instead
 # of editing this file, please use the migrations feature of Active Record to
@@ -12,7 +12,8 @@
 #
 # It's strongly recommended to check this file into your version control system.
 
-ActiveRecord::Schema.define(:version => 20130405121533) do
+
+ActiveRecord::Schema.define(:version => 20130405085020) do
 
   create_table "articles", :force => true do |t|
     t.string   "title"
@@ -21,6 +22,9 @@ ActiveRecord::Schema.define(:version => 20130405121533) do
     t.datetime "updated_at", :null => false
     t.integer  "user_id"
   end
+
+
+  add_index "articles", ["created_at"], :name => "index_articles_on_created_at"
 
   create_table "comments", :force => true do |t|
     t.text     "content"
@@ -52,7 +56,7 @@ ActiveRecord::Schema.define(:version => 20130405121533) do
   add_index "users", ["reset_password_token"], :name => "index_users_on_reset_password_token", :unique => true
 
 end
-=======
+
 # encoding: UTF-8
 # This file is auto-generated from the current state of the database. Instead
 # of editing this file, please use the migrations feature of Active Record to
@@ -106,4 +110,4 @@ ActiveRecord::Schema.define(:version => 20130405085020) do
   add_index "users", ["reset_password_token"], :name => "index_users_on_reset_password_token", :unique => true
 
 end
->>>>>>> b45123e921a96ea77f8146c6b3f84d0ab637f58d
+
