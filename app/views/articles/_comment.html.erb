@@ -1,4 +1,6 @@
-<div>
-  <p class="comment"><%= comment.content %></p>
-  <p>Posted <%= comment.article.created_at %> later</p>
-</div>
+	<div>
+	  <div style="border: 1px solid #82b548;border-radius: 6px 6px 6px 6px;margin: 10px 35px 15px; padding: 20px 20px 25px; background: none repeat scroll 0 0 #66c9ee; width: 80%; font-size: 1.2em">
+	    <p class="comment"><%= comment.content %></p>
+	   <div style="color:#ffffff; margin-top:15px"> <p>Posted at <%= comment.article.created_at.strftime("%Y-%m-%d %H:%M:%I") %> </p></div>
+	  </div>
+	</div>
