@@ -5,9 +5,15 @@
   <div style="color:#51702E"><h2><%= @article.title %></h2></div>
   <div id="tabs"> 
      <ul id="tabs">
-     <li><div style="color:#666666; font-size: 1.4em;">  <%= @article.created_at.in_time_zone("Asia/Calcutta") %></div></li>
+     <li><div style="color:#82b548; font-size: 1.4em;">  <%= time_ago_in_words(@article.created_at.in_time_zone("Asia/Calcutta")) %> ago </div></li>
+
       <li> <div style="color:#4895d1; font-size: 1.4em;">  <%= @article.user.username if @article.user %></div></li>
-      <li><div style="color:#CCD600; font-size: 1.4em;"> Comments <% %></div></li>
+      <% if ! @article.comments.empty? %>
+      <li><div style="color:#CCD600; font-size: 1.4em;"> comments (<%= @article.comments.size %>)</div></li>
+     <% else %>
+          <li><div style="color:#CCD600; font-size: 1.4em;"> no comment </div></li>
+      <% end %>
+
       <% @article.tags.each do |tag| %>
       <%= link_to tag.name, tag_path(tag) %>
       <% end %>
@@ -34,7 +40,8 @@
     <%= render :partial => 'comment_form' %>
     <hr style="border: 1px solid #66C9EE;">
     <% @article.comments.each do |c| %>
-    <% unless c.nil? %>
+    <% unless  c.nil? %>
+    
    <div style="margin:left:50px; margin:right:50px"> <%= render partial: 'articles/comment', :locals => { :comment => c } %> </div>
     <% end %>
     <% end %>
