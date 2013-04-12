@@ -11,7 +11,10 @@
      <div  cols="40" style="width: 622px; height: 395px;"> <%= f.text_area :body, :class => 'text_area' %></div>
     </div>
   </div>
-
+ <p>
+  <%= f.label :tag_list %><br />
+  <%= f.text_field :tag_list %>
+</p>
   <div class="form-actions">
     <%= f.submit nil, :class => 'btn btn-primary' %>
     <%= link_to t('.cancel', :default => t("helpers.links.cancel")),

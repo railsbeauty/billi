@@ -2,6 +2,7 @@ Mau::Application.routes.draw do
   devise_for :users
   root :to => 'articles#index'
   resources :dashboard
+  resources :tags
   resources :articles do
   resources :comments
 end
