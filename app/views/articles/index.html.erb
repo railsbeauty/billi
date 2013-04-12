@@ -13,7 +13,11 @@
    <li><div style="color:#666666; font-size: 1.4em;">  <%= article.created_at.in_time_zone("Asia/Calcutta") %></div></li>
    
     <li> <div style="color:#4895d1; font-size: 1.4em">  <%= article.user.username if article.user %></div></li>
-    <li><div style="color:#CCD600; font-size: 1.4em;"> Comments <%  %></div></li>   
+    <% if !article.nil? %>
+      <li><div style="color:#CCD600; font-size: 1.4em;">  comments (<%= article.comments.size %>)</div></li>
+      <li><div style="color:#CCD600; font-size: 1.4em;"> <%= article.tags.collect(&:name).to_s.chomp %> </div></li>
+
+     <% end %>
    </ul>
  </div>
     <hr style="border: 1px solid #2e77bb; margin-top:35px">
