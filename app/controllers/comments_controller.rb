@@ -1,5 +1,5 @@
 class CommentsController < ApplicationController
-	 before_filter :signed_in_user
+	 before_filter :current_user
 	def new
 	  @comment = Comment.new
 	end

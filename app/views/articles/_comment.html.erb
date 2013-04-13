@@ -1,11 +1,18 @@
+
+<% if  !@article.comments.empty? %>
 <div>
   <div style="border: 1px solid #ffffff;border-radius: 6px 6px 6px 6px;margin: 10px 15px 15px; padding: 5px 5px 25px; background: none repeat scroll 0 0 #66c9ee; width:95%; font-size: 1.2em">
   <%= comment.content %>
     <div id="tabula"> 
       <ul id="tabula">
-       <li> <div style="color:#ffffff; margin-top:4px;"> <p>Posted at <%= comment.created_at %> </p></div></li>
+       <li> <div style="color:#ffffff; margin-top:4px;"> <p> <%= time_tag(comment.created_at.in_time_zone("Asia/Calcutta")) unless comment.created_at.nil? %> </p></div></li>
        <li> <div style="color:#ffffff; font-size: 1.0em;margin-top:4px;"> <%= comment.user.username if comment.user %></div></li>
       </ul>
     </div>
   </div>
 </div>
+<% else %>
+<h5> there is no comment yet , be first to comment</h5>
+<% end %>
+
+
