@@ -3,23 +3,23 @@
   <title> <h2> learning experience blog </h2></title>
 </div>
 
-<div style="border: 0px solid #1763A4;border-radius: 0px 0px 0px 0px;margin: 0 0 20px; padding: 20px 20px 10px; background: none repeat scroll 0 0 #66c9ee; width: 85%">
+<div style="border: 0px solid #1763A4;border-radius: 0px 0px 0px 0px;margin: 0 0 20px; padding: 20px 20px 10px; background: none repeat scroll 0 0 #E0E0F0; width: 85%">
 
  <% @articles.each do |article| %>
-  <div style=" border-bottom: none:border: 1px solid #666666;border-radius: 1px 1px 1px 1px;margin: 0 0 20px; padding: 20px 20px 10px;height:300px; background: none repeat scroll 0 0 #FFFFFF ">
-  <div style="font-size: 2em"> <%= link_to article.title, article_path(article) %></div>
+  <div style=" border-bottom: none:border: 1px solid #666666;border-radius: 1px 1px 1px 1px;margin: 0 0 20px; padding: 20px 20px 10px;height:250px; background: none repeat scroll 0 0 #FFFFFF ">
+  <div style="font-size: 1.6em"> <%= link_to article.title, article_path(article) %></div>
    <div id="tabs"> 
    <ul id="tabs">
     <li><div style="color:#82b548;">  <%= time_tag(article.created_at.in_time_zone("Asia/Calcutta")) %> </div></li>
-    <li> <div style="color:#4895d1; font-size: 1.0em">  <%= article.user.username if article.user %></div></li>
+    <li> <div style="color:#4895d1; font-size: 1.2em">  <%= article.user.username if article.user %></div></li>
     <% if !article.nil? %>
-      <li><div style="color:#CCD600; font-size: 1.0em;">  <%= article.comments.size %> comments </div></li>
-      <li><div style="color:#CCD600; font-size: 1.0em;"> <%= link_to article.tags.collect(&:name).join(" ") %> </div></li>
+      <li><div style="color:#CCD600; font-size: 1.2em;">  <%= article.comments.size %> comments </div></li>
+      <li><div style="color:#CCD600; font-size: 1.2em;"> <%= link_to article.tags.collect(&:name).join(" ") %> </div></li>
      <% end %>
    </ul>
  </div>
     <hr style="border: 1px solid #2e77bb; margin-top:35px">
-    <div style="margin-top:10px; font-size: 1.2em"> <%= truncate(article.body, :length => 500, :separator => ' ') %></div>  
+    <div style="margin-top:10px; font-size: 1.2 em"> <%= truncate(article.body, :length => 500, :separator => ' ') %></div>  
     <div style="margin-top:45px">
     <% if current_user.try(:is_admin) %>
      <%= link_to "edit",edit_article_path(article), :class => 'btn btn-warning btn' %>

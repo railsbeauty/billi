@@ -1,6 +1,4 @@
- <%- model_class = Article -%>
-   <div class="page-header">
-    <h1><%=t '.title', :default => t('helpers.titles.edit', :model => model_class.model_name.human,
-     :default => "Edit #{model_class.model_name.human}") %></h1>
+  <div style="border: 0px solid #1763A4;border-radius: 4px 4px 4px 4px;margin: 0 0 50px; padding: 20px 20px 10px; background: none repeat scroll 0 0 #ffffff; width: 100%; margin-left:150px">
+	 <div style="color:#0077CC;"> <h3> edit article </h3> </div>
+     <%= render :partial => 'form' %>
   </div>
-<%= render :partial => 'form' %>

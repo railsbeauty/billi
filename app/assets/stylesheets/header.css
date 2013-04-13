@@ -6,8 +6,8 @@
   background-image: -ms-linear-gradient(top, #1763A4, #1763A4);
   background-image: -webkit-gradient(linear, 0 0, 0 100%, from(#1763A4), to(#1763A4));
   background-image: -webkit-linear-gradient(top, #1763A4, #1763A4);
-  background-image: -o-linear-gradient(top, #1763A4, #1763A4);
-  background-image: linear-gradient(top, #1763A4, #1763A4);
+  background-image: -o-linear-gradient(top, #00B2ED, #00B2ED);
+  background-image: linear-gradient(top, #00B2ED, #00B2ED);
   background-repeat: repeat-x;
 
   /* IE8-9 gradient filter */
@@ -52,7 +52,7 @@
  padding: 2px 15px 5px;
  border: 0px solid #666666;
  list-style: none;
- font-size: 1.4em;
+ font-size: 1.2em;
  
  float: left
  }
@@ -66,7 +66,7 @@
  #tabula ul li {
  margin-left: 0;
  margin-bottom: 110;
- padding: 2px 15px 5px;
+ padding: 0px 0px 0px;
  border: 0px solid #666666;
  list-style: none;
  font-size: 1.0em;

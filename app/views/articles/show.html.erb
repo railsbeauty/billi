@@ -1,5 +1,5 @@
 
-  <div style="border: 0px solid #1763A4;border-radius: 4px 4px 4px 4px;margin: 0 0 20px; padding: 20px 20px 10px; background: none repeat scroll 0 0 #66c9ee; width: 90% ">
+  <div style="border: 0px solid #1763A4;border-radius: 4px 4px 4px 4px;margin: 0 0 20px; padding: 20px 20px 10px; background: none repeat scroll 0 0 #E0E0F0; width: 90% ">
 
   <div style="border-bottom: none:border: 0px solid #666666;border-radius: 4px 4px 4px 4px;margin: 0 0 20px; padding: 20px 20px 10px;; background: none repeat scroll 0 0 #FFFFFF ">
   <div style="color:#51702E"><h2><%= @article.title %></h2></div>
@@ -42,12 +42,13 @@
     <hr style="border: 1px solid #66C9EE;">
     <% @article.comments.each do |c| %>
     <% unless  c.nil? %>
-    <% unless   @article.comments.empty? %>
-   <div style="margin:left:50px; margin:right:50px"> <%= render partial: 'articles/comment', :locals => { :comment => c } %> </div>
     <% end %>
+    
+    
+   <div style="margin:left:50px; margin:right:50px"> <%= render partial: 'articles/comment', :locals => { :comment => c } %> </div>
     <% end %> 
     </div>
-    <% end %>
+
     
 
 
