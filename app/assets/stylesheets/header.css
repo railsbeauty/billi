@@ -52,6 +52,24 @@
  padding: 2px 15px 5px;
  border: 0px solid #666666;
  list-style: none;
+ font-size: 1.4em;
+ 
+ float: left
+ }
+
+ #tabula ul {
+ margin-left: 0;
+ padding-left: 0;
+ display: inline;
+ } 
+
+ #tabula ul li {
+ margin-left: 0;
+ margin-bottom: 110;
+ padding: 2px 15px 5px;
+ border: 0px solid #666666;
+ list-style: none;
+ font-size: 1.0em;
  
  float: left
  }

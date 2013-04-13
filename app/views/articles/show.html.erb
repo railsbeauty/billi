@@ -5,19 +5,19 @@
   <div style="color:#51702E"><h2><%= @article.title %></h2></div>
   <div id="tabs"> 
      <ul id="tabs">
-     <li><div style="color:#82b548; font-size: 1.4em;">  <%= time_ago_in_words(@article.created_at.in_time_zone("Asia/Calcutta")) %> ago </div></li>
+     <li><div style="color:#82b548;">  <%= time_ago_in_words(@article.created_at.in_time_zone("Asia/Calcutta")) %> ago </div></li>
 
-      <li> <div style="color:#4895d1; font-size: 1.4em;">  <%= @article.user.username if @article.user %></div></li>
+      <li> <div style="color:#4895d1; ">  <%= @article.user.username if @article.user %></div></li>
       <% if ! @article.comments.empty? %>
-      <li><div style="color:#CCD600; font-size: 1.4em;">  <%= @article.comments.size %> comments</div></li>
+      <li><div style="color:#CCD600;">  <%= @article.comments.size %> comments</div></li>
      <% else %>
-          <li><div style="color:#CCD600; font-size: 1.4em;"> no comment </div></li>
+          <li><div style="color:#CCD600;"> no comment </div></li>
       <% end %>
-
+      <li>
       <% @article.tags.each do |tag| %>
-      <li><div style="font-size: 1.4em"><%= link_to tag.name, tag_path(tag) %></div></li>
+     <%= link_to tag.name, tag_path(tag) %>
       <% end %>
-     
+     </li>
      </ul>
    </div>
   <hr style="border: 1px solid #2e77bb; margin-top:35px">
