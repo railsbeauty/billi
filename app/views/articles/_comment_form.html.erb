@@ -1,10 +1,10 @@
 <%= form_for ([@article, @article.comments.build]) do |f| %>
  <%= f.hidden_field :article_id %>
- <h4> post comments here </h4>
-  <div class="field">
-    <%= f.text_area :content, :style => "width:570px; height:100px; border: 1px solid #82b548;margin-top:20px" %>
+ 
+  <div style="" >
+    <%= f.text_area :content, :style => "width:730px; height:100px; border: 1px solid #82b548;margin-top:10px" %>
   </div>
   <div class="actions">
-    <%= f.submit "Post", :style => "margin-right:20px; margin-left:540px; background-color:#82b548; color:#FFFFFF; border: 1px solid #82b548; border-radius: 3px 3px 3px 3px; font-size: 1.2rem;" %>
+    <%= f.submit "Post  comment", :style => "margin-right:20px; margin-left:600px; background-color:#82b548; color:#FFFFFF; border: 1px solid #82b548; border-radius: 3px 3px 3px 3px; font-size: 1.2rem;" %>
   </div>
 <% end %>

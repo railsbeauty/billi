@@ -9,13 +9,13 @@
 
       <li> <div style="color:#4895d1; font-size: 1.4em;">  <%= @article.user.username if @article.user %></div></li>
       <% if ! @article.comments.empty? %>
-      <li><div style="color:#CCD600; font-size: 1.4em;"> comments (<%= @article.comments.size %>)</div></li>
+      <li><div style="color:#CCD600; font-size: 1.4em;">  <%= @article.comments.size %> comments</div></li>
      <% else %>
           <li><div style="color:#CCD600; font-size: 1.4em;"> no comment </div></li>
       <% end %>
 
       <% @article.tags.each do |tag| %>
-      <%= link_to tag.name, tag_path(tag) %>
+      <li><div style="font-size: 1.4em"><%= link_to tag.name, tag_path(tag) %></div></li>
       <% end %>
      
      </ul>
@@ -35,7 +35,7 @@
     
     <div style="border: 2px solid #1763A4;border-radius: 4px 4px 4px 4px;margin: 0 0 20px; padding: 20px 20px 10px; background: none repeat scroll 0 0 #ffffff; width: 85% ">
     <% unless @article.comments.empty? %>
-    <h3>Comments (<%= @article.comments.size %>)</h3>
+    <h5> <%= @article.comments.size %> comments</h5>
     <% end %>
     <%= render :partial => 'comment_form' %>
     <hr style="border: 1px solid #66C9EE;">
