@@ -1,5 +1,15 @@
 
 class ArticlesController < ApplicationController
+  before_filter :is_user_admin, only: [:new, :create]
+
+  def is_user_admin
+    unless  current_user.is_admin?
+      :root 
+      return false
+
+    end
+  end
+
 	def index
 		@articles = Article.all(:order => "created_at DESC")
 	end
