@@ -7,15 +7,14 @@
 
  <% @articles.each do |article| %>
   <div style=" border-bottom: none:border: 1px solid #666666;border-radius: 1px 1px 1px 1px;margin: 0 0 20px; padding: 20px 20px 10px;height:300px; background: none repeat scroll 0 0 #FFFFFF ">
-  <div style="font-size: 3em"> <%= link_to article.title, article_path(article) %></div>
+  <div style="font-size: 2em"> <%= link_to article.title, article_path(article) %></div>
    <div id="tabs"> 
    <ul id="tabs">
-   <li><div style="color:#666666; font-size: 1.2em;">  <%= article.created_at.in_time_zone("Asia/Calcutta") %></div></li>
-   
-    <li> <div style="color:#4895d1; font-size: 1.2em">  <%= article.user.username if article.user %></div></li>
+    <li><div style="color:#82b548;">  <%= time_ago_in_words(article.created_at.in_time_zone("Asia/Calcutta")) %> ago </div></li>
+    <li> <div style="color:#4895d1; font-size: 1.0em">  <%= article.user.username if article.user %></div></li>
     <% if !article.nil? %>
-      <li><div style="color:#CCD600; font-size: 1.2em;">  <%= article.comments.size %> comments </div></li>
-      <li><div style="color:#CCD600; font-size: 1.2em;"> <%= article.tags.collect(&:name).join(" ") %> </div></li>
+      <li><div style="color:#CCD600; font-size: 1.0em;">  <%= article.comments.size %> comments </div></li>
+      <li><div style="color:#CCD600; font-size: 1.0em;"> <%= link_to article.tags.collect(&:name).join(" ") %> </div></li>
      <% end %>
    </ul>
  </div>
