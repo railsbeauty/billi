@@ -1,6 +1,7 @@
 <%= form_for @article, :html => { :class => '' } do |f| %>
-
-<%= error_messages_for :article %>
+<%= f.error_messages :header_message => "Invalid article!",
+  :message => "You'll need to fix the following fields:",
+  :header_tag => :h3, :class => "background-color:#d24d33; color:#ffffff" %>
   <div>
     <%= f.label :title, :style => "margin-top:10px;" %>
     <div>
