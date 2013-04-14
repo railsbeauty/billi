@@ -1,13 +1,11 @@
 
 class ArticlesController < ApplicationController
-  before_filter :is_user_admin, only: [:new, :create]
+
+  before_filter :is_user_admin, only: [:new, :create, :edit, :destroy]
 
   def is_user_admin
-    unless  current_user.is_admin?
-      :root 
-      return false
-
-    end
+    redirect_to(action: :index) unless current_user.try(:is_admin?) 
+    return false 
   end
 
 	def index
