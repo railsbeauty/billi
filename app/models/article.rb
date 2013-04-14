@@ -5,6 +5,8 @@ class Article < ActiveRecord::Base
    belongs_to :user
    has_many :taggings
    has_many :tags, through: :taggings
+   validates :title, :body, :tag_list,  :presence => true
+
 
    def tag_list
     self.tags.collect do |tag|

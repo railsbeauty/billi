@@ -1,5 +1,5 @@
 class CommentsController < ApplicationController
-	 before_filter :require_login, except: [:create]
+	 before_filter :user_signed_in, except: [:create]
 	def new
 	  @comment = Comment.new
 	end

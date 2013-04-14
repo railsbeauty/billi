@@ -1,4 +1,6 @@
 <%= form_for @article, :html => { :class => '' } do |f| %>
+
+<%= error_messages_for :article %>
   <div>
     <%= f.label :title, :style => "margin-top:10px;" %>
     <div>
