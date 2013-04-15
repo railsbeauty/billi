@@ -1,15 +1,13 @@
-
-<div class="">
-  <title> <h2> learning experience blog </h2></title>
-</div>
-
-<div style="border: 0px solid #1763A4;border-radius: 0px 0px 0px 0px;margin: 0 0 20px; padding: 20px 20px 10px; background: none repeat scroll 0 0 #E0E0F0; width: 85%">
+<table style="width="100%">
+<tr>
+<td style="hstyle="width="400%">  
+<div style="border: 1px solid #1763A4;border-radius: 0px 0px 0px 0px; padding: 20px 20px 10px; background: none repeat scroll 0 0 #E0E0F0; width: 300%; margin-top:0px;" >
 
  <% @articles.each do |article| %>
   <div style=" border-bottom: none:border: 1px solid #666666;border-radius: 1px 1px 1px 1px;margin: 0 0 20px; padding: 20px 20px 10px;height:250px; background: none repeat scroll 0 0 #FFFFFF ">
   <div style="font-size: 1.6em"> <%= link_to article.title, article_path(article) %></div>
-   <div id="tabs"> 
-   <ul id="tabs">
+  <div id="tabs"> 
+  <ul id="tabs">
     <li><div style="color:#82b548;">  <%= time_tag(article.created_at.in_time_zone("Asia/Calcutta")) %> </div></li>
     <li> <div style="color:#4895d1; font-size: 1.2em">  <%= article.user.username if article.user %></div></li>
     <% if !article.nil? %>
@@ -32,5 +30,61 @@
  <% if current_user.try(:is_admin) %>
   <%= link_to "Create new Article", new_article_path, :class => 'btn btn-large btn-primary' %>
   <% end %>
-
+  </div>
+</td>
+<td style="style="width="100%; margin-left:8 00px">
   
+<div class="container">
+  <div class="row">
+    <div class="span3" style="margin-top:10px">
+      
+        <div style="border: 1px solid #1763A4;border-radius: 0px 0px 0px 0px; padding: 20px 20px 10px; background: none repeat scroll 0 0 #E0E0fff; width: 90%; margin-top:-1844px;margin-left:700px;">
+      <ul>
+            <h4> Recent articles </h4>
+            <li><%= link_to "News", "/path1"  %></li>
+            <li><%= link_to "Recent Articles", "/path2"  %></li>
+            <li><%= link_to "Hot Articles", "/path3"  %></li>
+             <li><%= link_to "News", "/path1"  %></li>
+            <li><%= link_to "Recent Articles", "/path2"  %></li>
+            <li><%= link_to "Hot Articles", "/path3"  %></li>
+             <li><%= link_to "News", "/path1"  %></li>
+             <li><%= link_to "News", "/path1"  %></li>
+            <li><%= link_to "Recent Articles", "/path2"  %></li>
+            <li><%= link_to "Hot Articles", "/path3"  %></li>
+             <li><%= link_to "News", "/path1"  %></li>         
+        </ul>
+      </div>
+      </div> <!-- well -->
+    </div> <!-- span4 -->
+  </div> <!-- row -->
+</div> <!-- container -->
+<div class="container">
+  <div class="row">
+    <div class="span3" style="margin-top:10px">
+      
+        <div style="border: 1px solid #1763A4;border-radius: 0px 0px 0px 0px; padding: 20px 20px 10px; background: none repeat scroll 0 0 #E0E0fff; width: 90%; margin-top:-1544px;margin-left:700px;">
+      <ul>
+           <h4> Articles by tags </h4>
+            <li><%= link_to "News", "/path1"  %></li>
+            <li><%= link_to "Recent Articles", "/path2"  %></li>
+            <li><%= link_to "Hot Articles", "/path3"  %></li>
+             <li><%= link_to "News", "/path1"  %></li>
+            <li><%= link_to "Recent Articles", "/path2"  %></li>
+            <li><%= link_to "Hot Articles", "/path3"  %></li>
+             <li><%= link_to "News", "/path1"  %></li>
+             <li><%= link_to "News", "/path1"  %></li>
+            <li><%= link_to "Recent Articles", "/path2"  %></li>
+            <li><%= link_to "Hot Articles", "/path3"  %></li>
+             <li><%= link_to "News", "/path1"  %></li>         
+        </ul>
+      </div>
+      </div> <!-- well -->
+    </div> <!-- span4 -->
+  </div> <!-- row -->
+</div> <!-- container -->
+
+
+</div>
+</td>
+</tr>
+</table>

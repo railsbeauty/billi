@@ -8,10 +8,10 @@ class CommentsController < ApplicationController
 	  @article = Article.find(params[:article_id])
 	  @comment = @article.comments.build(params[:comment])
 	  @comment.user_id = current_user.id
-	  if @comment.save
+	  @comment.save
 	    flash[:success] = "Comment created!"
 	    redirect_to article_path(@comment.article)
-	  end
+	 
 	end
 
 	def destroy

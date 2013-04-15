@@ -8,7 +8,8 @@ gem 'rails', '3.2.11'
 
 gem 'sqlite3'
 gem 'dynamic_form'
-
+gem 'client_side_validations'
+gem 'turn', '0.8.2', :require => false
 
 # Gems used only for assets and not required
 # in production environments by default.

@@ -1,5 +1,5 @@
 
-<%= form_for ([@article, @article.comments.build]) do |f| %>
+<%= form_for ([@article, @article.comments.build]), :required => true do |f| %>
  <%= f.hidden_field :article_id %>
  
   <div style="" >
