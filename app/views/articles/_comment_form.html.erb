@@ -1,7 +1,6 @@
 
 <%= form_for ([@article, @article.comments.build]), :required => true do |f| %>
- <%= f.hidden_field :article_id %>
- 
+ <%= f.hidden_field :article_id %> 
   <div style="" >
     <%= f.text_area :content, :style => "width:730px; height:100px; border: 1px solid #66c9ee;margin-top:10px; background-color:#FFFFFF;" %>
   </div>
