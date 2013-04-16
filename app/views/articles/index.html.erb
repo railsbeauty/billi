@@ -42,17 +42,9 @@
     
             <div style="background-color:#1fb2e8; color:#FFFFFF; font-size: 1.6em"> recent article </div>
           <div style="font-size: 1.3em">
-           <div style="margin-top:15px; margin-left:8px"> <%= link_to "News", "/path1"  %></div> 
-           <div style="margin-top:15px; margin-left:8px"> <%= link_to "Recent Articles", "/path2"  %></div> 
-            <div style="margin-top:15px; margin-left:8px"><%= link_to "Hot Articles", "/path3"  %></div> 
-            <div style="margin-top:15px; margin-left:8px"> <%= link_to "News", "/path1"  %></div> 
-           <div style="margin-top:15px; margin-left:8px"> <%= link_to "Recent Articles", "/path2"  %></div> 
-           <div style="margin-top:15px; margin-left:8px"> <%= link_to "Hot Articles", "/path3"  %></div> 
-             <div style="margin-top:15px; margin-left:8px"><%= link_to "News", "/path1"  %></div> 
-            <div style="margin-top:15px; margin-left:8px"> <%= link_to "News", "/path1"  %></div> 
-           <div style="margin-top:15px; margin-left:8px"> <%= link_to "Recent Articles", "/path2"  %></div> 
-           <div style="margin-top:15px; margin-left:8px"> <%= link_to "Hot Articles", "/path3"  %></div> 
-           <div style="margin-top:15px; margin-left:8px">  <%= link_to "News", "/path1"  %> </div> 
+           <% @articles.each do |article| %>
+            <div style="margin-top:15px; margin-left:8px">  <%= link_to article.title.last(5), article_path(article) %></div>
+           <% end %>
                  
         </ul>
       </div>
