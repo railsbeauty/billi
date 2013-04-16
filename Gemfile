@@ -1,3 +1,4 @@
+
 source 'https://rubygems.org'
 
 gem 'rails', '3.2.11'
@@ -6,7 +7,9 @@ gem 'rails', '3.2.11'
 # gem 'rails', :git => 'git://github.com/rails/rails.git'
 
 gem 'sqlite3'
-
+gem 'dynamic_form'
+gem 'client_side_validations'
+gem 'turn', '0.8.2', :require => false
 
 # Gems used only for assets and not required
 # in production environments by default.
@@ -28,8 +31,8 @@ gem 'devise'
 gem 'will_paginate'
 
 gem 'twitter-bootstrap-rails'
-  gem "therubyracer"
-  gem "less-rails"
+
+ gem 'therubyracer', :platform => :ruby 
 
 # To use ActiveModel has_secure_password
 # gem 'bcrypt-ruby', '~> 3.0.0'
@@ -45,3 +48,4 @@ gem 'twitter-bootstrap-rails'
 
 # To use debugger
 # gem 'debugger'
+

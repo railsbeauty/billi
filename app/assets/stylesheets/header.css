@@ -6,8 +6,8 @@
   background-image: -ms-linear-gradient(top, #1763A4, #1763A4);
   background-image: -webkit-gradient(linear, 0 0, 0 100%, from(#1763A4), to(#1763A4));
   background-image: -webkit-linear-gradient(top, #1763A4, #1763A4);
-  background-image: -o-linear-gradient(top, #1763A4, #1763A4);
-  background-image: linear-gradient(top, #1763A4, #1763A4);
+  background-image: -o-linear-gradient(top, #00B2ED, #00B2ED);
+  background-image: linear-gradient(top, #00B2ED, #00B2ED);
   background-repeat: repeat-x;
 
   /* IE8-9 gradient filter */
@@ -52,6 +52,24 @@
  padding: 2px 15px 5px;
  border: 0px solid #666666;
  list-style: none;
+ font-size: 1.2em;
+ 
+ float: left
+ }
+
+ #tabula ul {
+ margin-left: 0;
+ padding-left: 0;
+ display: inline;
+ } 
+
+ #tabula ul li {
+ margin-left: 0;
+ margin-bottom: 110;
+ padding: 0px 0px 0px;
+ border: 0px solid #666666;
+ list-style: none;
+ font-size: 1.0em;
  
  float: left
  }
@@ -76,3 +94,50 @@ div.hireme, div#hireme {
     color: #FFFFFF;
     text-decoration: blink;
   }
+
+  element.style {
+    height: 132px;
+    width: 759px;
+}
+body, input, select, textarea, button {
+    font: 13px/1.4 Helvetica,arial,freesans,clean,sans-serif;
+
+}
+
+
+.field_with_errors {
+  padding: 2px;
+  background-color: light-green;
+  display: table;
+}
+
+#errorExplanation {
+  width: 400px;
+  border: 00px solid red;
+  padding: 7px;
+  padding-bottom: 12px;
+  margin-bottom: 20px;
+  background-color: #999911;
+}
+
+#errorExplanation h2 {
+  text-align: left;
+  font-weight: bold;
+  padding: 5px 5px 5px 15px;
+  font-size: 12px;
+  margin: -7px;
+  background-color: #c00;
+  color: #fff;
+}
+
+#errorExplanation p {
+  color: #333;
+  margin-bottom: 0;
+  padding: 5px;
+}
+
+#errorExplanation ul li {
+  font-size: 12px;
+  list-style: square;
+  color: #fff
+}

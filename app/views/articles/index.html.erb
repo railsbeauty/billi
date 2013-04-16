@@ -1,25 +1,23 @@
+<table style="width="100%">
+<tr>
+<td style="hstyle="width="400%">  
+<div style="border: 1px solid #1763A4;border-radius: 0px 0px 0px 0px; padding: 20px 20px 10px; background: none repeat scroll 0 0 #E0E0F0; width: 300%; margin-top:0px;" >
 
-<div class="">
-  <title> <h2> learning experience blog </h2></title>
-</div>
-
-<div style="border: 0px solid #1763A4;border-radius: 0px 0px 0px 0px;margin: 0 0 20px; padding: 20px 20px 10px; background: none repeat scroll 0 0 #66c9ee; width: 85%">
-
-<% @articles.each do |article| %>
-  <div style=" border-bottom: none:border: 1px solid #666666;border-radius: 1px 1px 1px 1px;margin: 0 0 20px; padding: 20px 20px 10px;height:300px; background: none repeat scroll 0 0 #FFFFFF ">
-
-  
-  <div style="font-size: 3em"> <%= link_to article.title, article_path(article) %></div>
-   <div id="tabs"> 
-   <ul id="tabs">
-   <li><div style="color:#666666; font-size: 1.4em;">  <%= article.created_at.in_time_zone("Asia/Calcutta") %></div></li>
-   
-    <li> <div style="color:#4895d1; font-size: 1.4em">  <%= article.user.username if article.user %></div></li>
-    <li><div style="color:#CCD600; font-size: 1.4em;"> Comments <%  %></div></li>
+ <% @articles.each do |article| %>
+  <div style=" border-bottom: none:border: 1px solid #666666;border-radius: 1px 1px 1px 1px;margin: 0 0 20px; padding: 20px 20px 10px;height:250px; background: none repeat scroll 0 0 #FFFFFF ">
+  <div style="font-size: 1.6em"> <%= link_to article.title, article_path(article) %></div>
+  <div id="tabs"> 
+  <ul id="tabs">
+    <li><div style="color:#82b548;">  <%= time_tag(article.created_at.in_time_zone("Asia/Calcutta")) %> </div></li>
+    <li> <div style="color:#4895d1; font-size: 1.2em">  <%= article.user.username if article.user %></div></li>
+    <% if !article.nil? %>
+      <li><div style="color:#CCD600; font-size: 1.2em;">  <%= article.comments.size %> comments </div></li>
+      <li><div style="color:#CCD600; font-size: 1.2em;"> <%= link_to article.tags.collect(&:name).join(" ") %> </div></li>
+     <% end %>
    </ul>
  </div>
     <hr style="border: 1px solid #2e77bb; margin-top:35px">
-    <div style="margin-top:10px; font-size: 1.2em"> <%= truncate(article.body, :length => 500, :separator => ' ') %></div>  
+    <div style="margin-top:10px; font-size: 1.2 em"> <%= truncate(article.body, :length => 500, :separator => ' ') %></div>  
     <div style="margin-top:45px">
     <% if current_user.try(:is_admin) %>
      <%= link_to "edit",edit_article_path(article), :class => 'btn btn-warning btn' %>
@@ -32,5 +30,87 @@
  <% if current_user.try(:is_admin) %>
   <%= link_to "Create new Article", new_article_path, :class => 'btn btn-large btn-primary' %>
   <% end %>
-
+  </div>
+</td>
+<td style="style="width="100%; margin-left:8 00px">
   
+<div class="container">
+  <div class="row">
+    <div class="span3" style="margin-top:10px">
+      
+        <div style="border: 1px solid #1fb2e8;border-radius: 0px 0px 0px 0px; padding: 0px 0px 5px; background: none repeat scroll 0 0 #E0E0fff;  width: 105%; margin-top:-1644px;margin-left:650px; height:440px">
+      <ul>
+            <div style="background-color:#1fb2e8; color:#FFFFFF; font-size: 1.6em"> recent article </div>
+          <div style="font-size: 1.3em">
+           <div style="margin-top:15px; margin-left:8px"> <li><%= link_to "News", "/path1"  %></li></div> 
+           <div style="margin-top:15px; margin-left:8px"> <li><%= link_to "Recent Articles", "/path2"  %></li></div> 
+            <div style="margin-top:15px; margin-left:8px"><li><%= link_to "Hot Articles", "/path3"  %></li></div> 
+            <div style="margin-top:15px; margin-left:8px"> <li><%= link_to "News", "/path1"  %></li></div> 
+           <div style="margin-top:15px; margin-left:8px"> <li><%= link_to "Recent Articles", "/path2"  %></li></div> 
+           <div style="margin-top:15px; margin-left:8px"> <li><%= link_to "Hot Articles", "/path3"  %></li></div> 
+             <div style="margin-top:15px; margin-left:8px"><li><%= link_to "News", "/path1"  %></li></div> 
+            <div style="margin-top:15px; margin-left:8px"> <li><%= link_to "News", "/path1"  %></li></div> 
+           <div style="margin-top:15px; margin-left:8px"> <li><%= link_to "Recent Articles", "/path2"  %></li></div> 
+           <div style="margin-top:15px; margin-left:8px"> <li><%= link_to "Hot Articles", "/path3"  %></li></div> 
+           <div style="margin-top:15px; margin-left:8px">  <li><%= link_to "News", "/path1"  %></li> </div> 
+             </div>        
+        </ul>
+      </div>
+      </div> <!-- well -->
+    </div> <!-- span4 -->
+  </div> <!-- row -->
+</div> <!-- container -->
+<div class="container">
+  <div class="row">
+    <div class="span3" style="margin-top:10px">
+      
+         <div style="border: 1px solid #1fb2e8;border-radius: 0px 0px 0px 0px; padding: 0px 0px 5px; background: none repeat scroll 0 0 #E0E0fff;  width: 105%; margin-top:-1170px;margin-left:650px; height:440px">
+      <ul>
+           <div style="font-size: 1.3em">
+           <div style="background-color:#1fb2e8; color:#FFFFFF; font-size: 1.6em"> aticles by tags </div>
+           <div style="margin-top:15px; margin-left:8px"> <li><%= link_to "News", "/path1"  %></li></div>
+            <div style="margin-top:15px; margin-left:8px"><li><%= link_to "Recent Articles", "/path2"  %></li></div>
+          <div style="margin-top:15px; margin-left:8px">  <li><%= link_to "Hot Articles", "/path3"  %></li></div>
+            <div style="margin-top:15px; margin-left:8px"> <li><%= link_to "News", "/path1"  %></li></div>
+           <div style="margin-top:15px; margin-left:8px"> <li><%= link_to "Recent Articles", "/path2"  %></li></div>
+           <div style="margin-top:15px; margin-left:8px"> <li><%= link_to "Hot Articles", "/path3"  %></li></div>
+             <div style="margin-top:15px; margin-left:8px"><li><%= link_to "News", "/path1"  %></li></div>
+            <div style="margin-top:15px; margin-left:8px"> <li><%= link_to "News", "/path1"  %></li></div>
+           <div style="margin-top:15px; margin-left:8px"> <li><%= link_to "Recent Articles", "/path2"  %></li></div>
+           <div style="margin-top:15px; margin-left:8px"> <li><%= link_to "Hot Articles", "/path3"  %></li></div>
+                    </div>
+        </ul>
+      </div>
+      </div> <!-- well -->
+    </div> <!-- span4 -->
+  </div> <!-- row -->
+</div> <!-- container -->
+
+<div class="container">
+  <div class="row">
+    <div class="span3" style="margin-top:10px">
+      
+        <div style="border: 1px solid #1fb2e8;border-radius: 0px 0px 0px 0px; padding: 0px 0px 5px; background: none repeat scroll 0 0 #E0E0fff; width: 85%; margin-top:-1944px;margin-left:650px; height:240px">
+      <ul>
+           <div style="background-color:#1fb2e8; color:#FFFFFF; font-size: 1.8em"> find me here </div>
+           
+           <div style="font-size: 1.3em">
+           <div style="margin-top:15px; margin-left:8px"> <li><a href="https://github.com/Vinay50 target="_blank; margin-left:8px"> GitHub</a> </li></div>
+           <div style="margin-top:12px; margin-left:8px"> <li><a href="http://stackoverflow.com/users/2096939/vsiingh" target="_blank"> stackoverflow</a> </li></div>
+            <div style="margin-top:12px; margin-left:8px"><li><a href="https://twitter.com/VieenaySiingh" target="_blank"> Twitter </a> </li></div>
+            <div style="margin-top:12px; margin-left:8px"><li><a href="https://plus.google.com/u/1/113565492904033788790/about/p/pub" target="_blank" target="_blank"> Google+</a> </li></div>
+            <div style="margin-top:12px; margin-left:8px"><li><a href="http://www.linkedin.com/profile/view?id=62531573&trk=tab_pro" target="_blank"> Linkedin</a> </li>  </div>
+          <div style="margin-top:12px; margin-left:8px"> <li> <a href="https://www.facebook.com/vieenaysiingh" target="_blank">facebook</a> </li></div>
+         </div>
+           
+        </ul>
+      </div>
+      </div> <!-- well -->
+    </div> <!-- span4 -->
+  </div> <!-- row -->
+</div> <!-- container -->
+
+</div>
+</td>
+</tr>
+</table>
