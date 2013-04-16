@@ -1,10 +1,10 @@
 <table style="width="100%">
 <tr>
 <td style="width="400%">  
-<div style="border: px solid #1763A4;border-radius: 0px 0px 0px 0px; padding: 2px 2px 2px; background: none repeat scroll 0 0 #1fb2e8; width: 270%; margin-left:60px;" >
+<div style="border: 1px solid #1763A4;border-radius: 0px 0px 0px 0px; padding: px 2px 2px; background: none repeat scroll 0 0 #1fb2e8; width: 270%; margin-left:60px;margin-top:55px;" >
 
  <% @articles.each do |article| %>
-  <div style=" border-bottom: none:border: 1px solid #666666;border-radius: 1px 1px 1px 1px;margin: 0 0 4px; padding: 20px 20px 10px;height:250px; background: none repeat scroll 0 0 #FBFBFB ">
+  <div style=" border-bottom: none:border: px solid #666666;border-radius: 1px 1px 1px 1px;margin: 0 0 1px; padding: 20px 20px 10px;height:300px; background: none repeat scroll 0 0 #EEEEEE;color:#666666;font-size:1.2em; ">
   <div style="font-size: 1.6em"> <%= link_to article.title, article_path(article) %></div>
   <div id="tabs"> 
   <ul id="tabs">
@@ -16,14 +16,15 @@
      <% end %>
    </ul>
  </div>
-    <hr style="border: 1px solid #2e77bb; margin-top:35px">
+    <hr style="border: 1px solid #EEEEEE; margin-top:35px">
     <div style="margin-top:10px; font-size: 1.2 em"> <%= truncate(article.body, :length => 500, :separator => ' ') %></div>  
     <div style="margin-top:45px">
     <% if current_user.try(:is_admin) %>
      <%= link_to "edit",edit_article_path(article), :class => 'btn btn-warning btn' %>
      <%= link_to "delete",article_path(article),:method => :delete,:confirm => 'Are you sure?',:class => 'btn  btn-danger' %>
     <% end %>
-     <%= link_to "view more...",article_path(article), :class => 'btn btn-primary' %> 
+     <%= link_to "view more...",article_path(article), :class => 'btn btn-info btn"' %> 
+     
    </div>
      </div>
     <% end %>
@@ -37,7 +38,7 @@
 <div class="container">
   <div class="row">
     <div class="span3" style="margin-top:10px">     
-        <div style="border: 1px solid #1fb2e8;border-radius: 0px 0px 0px 0px; padding: 0px 0px 5px; background: none repeat scroll 0 0#FBFBFB;  width: 105%; margin-top:-1544px;margin-left:570px; height:540px">   
+        <div style="border: px solid #1fb2e8;border-radius: 0px 0px 0px 0px; padding: 0px 0px 5px; background: none repeat scroll 0 #EEEEEE;  width: 105%; margin-top:-1874px;margin-left:570px; height:540px">   
             <div style="background-color:#1fb2e8; color:#FFFFFF; font-size: 1.6em"> recent article </div>
              <div style="font-size: 1.3em">
               <% @first_articles.each do |article_first|%>
@@ -56,7 +57,7 @@
 <div class="container">
   <div class="row">
     <div class="span3" style="margin-top:10px">     
-         <div style="border: 1px solid #1fb2e8;border-radius: 0px 0px 0px 0px; padding: 0px 0px 5px; background: none repeat scroll 0 0 #FBFBFB;  width: 105%; margin-top:-970px;margin-left:570px; height:440px">  
+         <div style="border: px solid #1fb2e8;border-radius: 0px 0px 0px 0px; padding: 0px 0px 5px; background: none repeat scroll 0 0 #EEEEEE;  width: 105%; margin-top:-1320px;margin-left:570px; height:440px">  
            <div style="font-size: 1.3em">
            <div style="background-color:#1fb2e8; color:#FFFFFF; font-size: 1.6em"> aticles by tags </div>
            <div style="margin-top:15px; margin-left:8px"> <%= link_to "News", "/path1"  %></div>
@@ -71,9 +72,9 @@
   <div class="row">
     <div class="span3" style="margin-top:10px">
       
-        <div style="border: 1px solid #1fb2e8;border-radius: 0px 0px 0px 0px; padding: 0px 0px 5px; background: none repeat scroll 0 0 #FBFBFB; width: 105%; margin-top:-1844px;margin-left:570px; height:240px">
+        <div style="border: px solid #1fb2e8;border-radius: 0px 0px 0px 0px; padding: 0px 0px 5px; background: none repeat scroll 0 0 #EEEEEE; width: 105%; margin-top:-2160px;margin-left:570px; height:240px">
       
-           <div style="background-color:#1fb2e8; color:#FFFFFF; font-size: 1.8em"> find me here </div>
+           <div style="background-color:#1fb2e8; color:#FFFFFF; font-size: 1.8em; margin-left:"> find me here </div>
            
            <div style="font-size: 1.3em">
            <div style="margin-top:15px; margin-left:8px"> <a href="https://github.com/Vinay50 target="_blank; margin-left:8px"> GitHub</a> </div>

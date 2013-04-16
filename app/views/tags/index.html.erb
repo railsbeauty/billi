@@ -1,0 +1,15 @@
+<h4> all tags</h4>
+<%= @tags.each do |tags| %>
+<table>
+	<tr>
+		<td>
+          <%= tags.id%>
+       </td>
+       <td>
+          <%= tags.name %>
+       </td>
+       <td>
+          <%= tags.created_at %>
+       </td>
+   </tr>
+<% end %>
