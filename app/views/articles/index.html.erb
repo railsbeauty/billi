@@ -38,21 +38,15 @@
   <div class="row">
     <div class="span3" style="margin-top:10px">
       
-        <div style="border: 1px solid #1fb2e8;border-radius: 0px 0px 0px 0px; padding: 0px 0px 5px; background: none repeat scroll 0 0#FBFBFB;  width: 105%; margin-top:-1544px;margin-left:570px; height:440px">
+        <div style="border: 1px solid #1fb2e8;border-radius: 0px 0px 0px 0px; padding: 0px 0px 5px; background: none repeat scroll 0 0#FBFBFB;  width: 105%; margin-top:-1544px;margin-left:570px; height:500px">
     
             <div style="background-color:#1fb2e8; color:#FFFFFF; font-size: 1.6em"> recent article </div>
           <div style="font-size: 1.3em">
-           <div style="margin-top:15px; margin-left:8px"> <%= link_to "News", "/path1"  %></div> 
-           <div style="margin-top:15px; margin-left:8px"> <%= link_to "Recent Articles", "/path2"  %></div> 
-            <div style="margin-top:15px; margin-left:8px"><%= link_to "Hot Articles", "/path3"  %></div> 
-            <div style="margin-top:15px; margin-left:8px"> <%= link_to "News", "/path1"  %></div> 
-           <div style="margin-top:15px; margin-left:8px"> <%= link_to "Recent Articles", "/path2"  %></div> 
-           <div style="margin-top:15px; margin-left:8px"> <%= link_to "Hot Articles", "/path3"  %></div> 
-             <div style="margin-top:15px; margin-left:8px"><%= link_to "News", "/path1"  %></div> 
-            <div style="margin-top:15px; margin-left:8px"> <%= link_to "News", "/path1"  %></div> 
-           <div style="margin-top:15px; margin-left:8px"> <%= link_to "Recent Articles", "/path2"  %></div> 
-           <div style="margin-top:15px; margin-left:8px"> <%= link_to "Hot Articles", "/path3"  %></div> 
-           <div style="margin-top:15px; margin-left:8px">  <%= link_to "News", "/path1"  %> </div> 
+           <% @article_titles.each do |article_title | %>
+            <div style="margin-top:15px; margin-left:8px">  <%= link_to article_title.title %></div>
+            <% end %>
+
+           
                  
         </ul>
       </div>
@@ -64,7 +58,7 @@
   <div class="row">
     <div class="span3" style="margin-top:10px">
       
-         <div style="border: 1px solid #1fb2e8;border-radius: 0px 0px 0px 0px; padding: 0px 0px 5px; background: none repeat scroll 0 0 #FBFBFB;  width: 105%; margin-top:-1070px;margin-left:570px; height:440px">
+         <div style="border: 1px solid #1fb2e8;border-radius: 0px 0px 0px 0px; padding: 0px 0px 5px; background: none repeat scroll 0 0 #FBFBFB;  width: 105%; margin-top:-970px;margin-left:570px; height:440px">
    
            <div style="font-size: 1.3em">
            <div style="background-color:#1fb2e8; color:#FFFFFF; font-size: 1.6em"> aticles by tags </div>
@@ -95,7 +89,7 @@
            <div style="background-color:#1fb2e8; color:#FFFFFF; font-size: 1.8em"> find me here </div>
            
            <div style="font-size: 1.3em">
-           <div style="margin-top:15px; margin-left:8px"> <a href="https://github.com/Vinay50 target="_blank; margin-left:8px"> GitHub</a> </div>
+           <div style="margin-top:15px; margin-left:8px"> <a href="https://github.com/Vinay50" target="_blank"> GitHub</a> </div>
            <div style="margin-top:12px; margin-left:8px"> <a href="http://stackoverflow.com/users/2096939/vsiingh" target="_blank"> stackoverflow</a> </div>
             <div style="margin-top:12px; margin-left:8px"><a href="https://twitter.com/VieenaySiingh" target="_blank"> Twitter </a> </div>
             <div style="margin-top:12px; margin-left:8px"><a href="https://plus.google.com/u/1/113565492904033788790/about/p/pub" target="_blank" target="_blank"> Google+</a> </div>
