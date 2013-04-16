@@ -6,19 +6,20 @@ class ArticlesController < ApplicationController
       redirect_to(action: :index) unless current_user.try(:is_admin?) 
       return false 
     end
+
 	  def index
 		  @articles = Article.all(:order => "created_at DESC")
-      @first_articles = @articles.first(10)
-      
-
+      @article_titles = Article.select(:title).last(10)
 	  end
+
     def show
       @article = Article.find(params[:id])
-
     end
+
 	  def new
       @article = Article.new
 	  end
+
     def create
       @article = Article.new(params[:article])
       @article.user_id = current_user.id
@@ -29,14 +30,17 @@ class ArticlesController < ApplicationController
         render 'new' 
       end 
     end
+
     def destroy
       @article = Article.find(params[:id])
       @article.destroy
       redirect_to action:  'index'	
     end
+
     def edit
       @article = Article.find(params[:id])
     end
+    
     def update
       @article = Article.find(params[:id])
       if @article.update_attributes(params[:article])
