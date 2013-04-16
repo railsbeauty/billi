@@ -8,9 +8,13 @@ class ArticlesController < ApplicationController
     end
 	  def index
 		  @articles = Article.all(:order => "created_at DESC")
+      @first_articles = @articles.limit(10)
+      
+
 	  end
     def show
       @article = Article.find(params[:id])
+
     end
 	  def new
       @article = Article.new

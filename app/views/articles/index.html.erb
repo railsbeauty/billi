@@ -36,24 +36,17 @@
   
 <div class="container">
   <div class="row">
-    <div class="span3" style="margin-top:10px">
-      
-        <div style="border: 1px solid #1fb2e8;border-radius: 0px 0px 0px 0px; padding: 0px 0px 5px; background: none repeat scroll 0 0#FBFBFB;  width: 105%; margin-top:-1544px;margin-left:570px; height:440px">
-    
+    <div class="span3" style="margin-top:10px">     
+        <div style="border: 1px solid #1fb2e8;border-radius: 0px 0px 0px 0px; padding: 0px 0px 5px; background: none repeat scroll 0 0#FBFBFB;  width: 105%; margin-top:-1544px;margin-left:570px; height:540px">   
             <div style="background-color:#1fb2e8; color:#FFFFFF; font-size: 1.6em"> recent article </div>
-          <div style="font-size: 1.3em">
-           <div style="margin-top:15px; margin-left:8px"> <%= link_to "News", "/path1"  %></div> 
-           <div style="margin-top:15px; margin-left:8px"> <%= link_to "Recent Articles", "/path2"  %></div> 
-            <div style="margin-top:15px; margin-left:8px"><%= link_to "Hot Articles", "/path3"  %></div> 
-            <div style="margin-top:15px; margin-left:8px"> <%= link_to "News", "/path1"  %></div> 
-           <div style="margin-top:15px; margin-left:8px"> <%= link_to "Recent Articles", "/path2"  %></div> 
-           <div style="margin-top:15px; margin-left:8px"> <%= link_to "Hot Articles", "/path3"  %></div> 
-             <div style="margin-top:15px; margin-left:8px"><%= link_to "News", "/path1"  %></div> 
-            <div style="margin-top:15px; margin-left:8px"> <%= link_to "News", "/path1"  %></div> 
-           <div style="margin-top:15px; margin-left:8px"> <%= link_to "Recent Articles", "/path2"  %></div> 
-           <div style="margin-top:15px; margin-left:8px"> <%= link_to "Hot Articles", "/path3"  %></div> 
-           <div style="margin-top:15px; margin-left:8px">  <%= link_to "News", "/path1"  %> </div> 
-                 
+             <div style="font-size: 1.3em">
+              <% @first_articles.each do |article_first|%>
+              <% if !article_first.nil? %>
+               <div style="margin-top:15px; margin-left:8px"> <%= link_to article_first.title, 
+               article_path(article_first) %></div> 
+            <% end %>    
+            <% end %>
+                  
         </ul>
       </div>
       </div> <!-- well -->
@@ -62,24 +55,12 @@
 </div> <!-- container -->
 <div class="container">
   <div class="row">
-    <div class="span3" style="margin-top:10px">
-      
-         <div style="border: 1px solid #1fb2e8;border-radius: 0px 0px 0px 0px; padding: 0px 0px 5px; background: none repeat scroll 0 0 #FBFBFB;  width: 105%; margin-top:-1070px;margin-left:570px; height:440px">
-   
+    <div class="span3" style="margin-top:10px">     
+         <div style="border: 1px solid #1fb2e8;border-radius: 0px 0px 0px 0px; padding: 0px 0px 5px; background: none repeat scroll 0 0 #FBFBFB;  width: 105%; margin-top:-970px;margin-left:570px; height:440px">  
            <div style="font-size: 1.3em">
            <div style="background-color:#1fb2e8; color:#FFFFFF; font-size: 1.6em"> aticles by tags </div>
            <div style="margin-top:15px; margin-left:8px"> <%= link_to "News", "/path1"  %></div>
-            <div style="margin-top:15px; margin-left:8px"><%= link_to "Recent Articles", "/path2"  %></div>
-          <div style="margin-top:15px; margin-left:8px"> <%= link_to "Hot Articles", "/path3"  %></div>
-            <div style="margin-top:15px; margin-left:8px"> <%= link_to "News", "/path1"  %></div>
-           <div style="margin-top:15px; margin-left:8px"> <%= link_to "Recent Articles", "/path2"  %></div>
-           <div style="margin-top:15px; margin-left:8px"> <%= link_to "Hot Articles", "/path3"  %></div>
-             <div style="margin-top:15px; margin-left:8px"><%= link_to "News", "/path1"  %></div>
-            <div style="margin-top:15px; margin-left:8px"> <%= link_to "News", "/path1"  %></div>
-           <div style="margin-top:15px; margin-left:8px"> <%= link_to "Recent Articles", "/path2"  %></div>
-           <div style="margin-top:15px; margin-left:8px"> <%= link_to "Hot Articles", "/path3"  %></div>
-                    </div>
-        
+         </div>       
       </div>
       </div> <!-- well -->
     </div> <!-- span4 -->
