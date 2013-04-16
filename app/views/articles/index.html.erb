@@ -43,8 +43,11 @@
             <div style="background-color:#1fb2e8; color:#FFFFFF; font-size: 1.6em"> recent article </div>
           <div style="font-size: 1.3em">
            <% @article_titles.each do |article_title | %>
-            <div style="margin-top:15px; margin-left:8px">  <%= link_to article_title.title %></div>
+           <% if !article_title.nil? %>
+            <div style="margin-top:15px; margin-left:8px">  <%= link_to truncate(article_title.title, :length => 20, :separator => ' '), "/articles?id=#{article_title.id}"  %></div>
             <% end %>
+            <% end %>
+
 
            
                  
