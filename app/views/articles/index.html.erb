@@ -63,9 +63,6 @@
            <div style="background-color:#1fb2e8; color:#FFFFFF; font-size: 1.6em"> aticles by tags </div>
            <% @tags.each do |tag| %>
            <%= link_to tag.name, tag %>
-           <% tag.articles.each do |article| %>
-           <%= link_to article.title, article_path(article) %>
-     <% end %>
 <% end %>
          </div>       
       </div>
