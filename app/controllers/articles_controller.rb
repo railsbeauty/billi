@@ -9,11 +9,13 @@ class ArticlesController < ApplicationController
 
 	  def index
 		  @articles = Article.all(:order => "created_at DESC")
-      @article_titles = Article.select(:title).last(10)
+      @article_titles = Article.first(10)
+      @tags = Tag.all
 	  end
 
     def show
       @article = Article.find(params[:id])
+      @tag = Tag.find(params[:id])
     end
 
 	  def new

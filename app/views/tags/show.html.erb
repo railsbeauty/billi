@@ -1,7 +1,13 @@
-<h1>Articles Tagged with <%= @tag.name %></h1>
 
+<div style="border: 0px solid #1763A4;border-radius: 4px 4px 4px 4px; padding: 20px 20px 10px; background: none repeat scroll 0 0 #ffffff; width: 100%; margin-left:150px;margin-top:00px">
+<div style="color:#0077CC; margin-top:00px"> <h3>articles tagged with <%= @tag.name %></h3></div>
+<% if @tag.articles.nil? %>
+	<h1> empty
+<% else %>
 <ul>
   <% @tag.articles.each do |article| %>
     <li><%= link_to article.title, article_path(article) %></li>
   <% end %>
 </ul>
+<% end %>
+</div>
