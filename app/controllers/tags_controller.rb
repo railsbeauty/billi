@@ -1,5 +1,5 @@
 class TagsController < ApplicationController
- before_filter :user_signed_in, only: [:destroy]
+ #before_filter :user_signed_in, only: [:destroy]
 
    def index
     @tags = Tag.all
