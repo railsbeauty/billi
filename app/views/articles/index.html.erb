@@ -39,7 +39,7 @@
   <div class="row">
     <div class="span3" style="margin-top:10px">
       
-        <div style="border: px solid #1fb2e8;border-radius: 0px 0px 0px 0px; padding: 0px 0px 5px; background: none repeat scroll 0 0 #EEEEEE;  width: 105%; margin-top:-1844px;margin-left:570px; height:500px">
+        <div style="border: px solid #1fb2e8;border-radius: 0px 0px 0px 0px; padding: 0px 0px 5px; background: none repeat scroll 0 0 #EEEEEE;  width: 105%; margin-top:-1200px;margin-left:570px; height:500px">
     
             <div style="background-color:#1fb2e8; color:#FFFFFF; font-size: 1.6em"> recent article </div>
           <div style="font-size: 1.3em">
@@ -58,16 +58,15 @@
   <div class="row">
     <div class="span3" style="margin-top:10px">
       
-         <div style="border: px solid #1fb2e8;border-radius: 0px 0px 0px 0px; padding: 0px 0px 5px; background: none repeat scroll 0 0 #EEEEEE;  width: 105%; margin-top:-1330px;margin-left:570px; height:440px">
+         <div style="border: px solid #1fb2e8;border-radius: 0px 0px 0px 0px; padding: 0px 0px 5px; background: none repeat scroll 0 0 #EEEEEE;  width: 105%; margin-top:-830px;margin-left:570px; height:440px">
            <div style="font-size: 1.3em">
            <div style="background-color:#1fb2e8; color:#FFFFFF; font-size: 1.6em"> aticles by tags </div>
-           <div style="margin-top:15px; margin-left:8px"> <%= link_to "News", "/path1"  %></div>
-            <% if !@tags.nil? %>
-           <% @tags.each  do | tags | %>
-          
-           <div style="margin-top:15px; margin-left:8px"> <%= link_to tags.name, "/path1"  %></div>
-           <% end%>
-           <% end %>
+           <% @tags.each do |tag| %>
+           <%= link_to tag.name, tag %>
+           <% tag.articles.each do |article| %>
+           <%= link_to article.title, article_path(article) %>
+     <% end %>
+<% end %>
          </div>       
       </div>
       </div> <!-- well -->
@@ -79,7 +78,7 @@
   <div class="row">
     <div class="span3" style="margin-top:10px">
       
-        <div style="border: px solid #1fb2e8;border-radius: 0px 0px 0px 0px; padding: 0px 0px 5px; background: none repeat scroll 0 0 #EEEEEE; width: 105%; margin-top:-2130px;margin-left:570px; height:240px">
+        <div style="border: px solid #1fb2e8;border-radius: 0px 0px 0px 0px; padding: 0px 0px 5px; background: none repeat scroll 0 0 #EEEEEE; width: 105%; margin-top:-1500px;margin-left:570px; height:240px">
       
            <div style="background-color:#1fb2e8; color:#FFFFFF; font-size: 1.8em; margin-left:"> find me here </div>
            

@@ -6,6 +6,9 @@ class TagsController < ApplicationController
    end
 
 	def show
+		puts "in show----------------------------------"
      @tag = Tag.find(params[:id])
+     puts "--------------------------------------",@tag.articles,"-------------------------------------"
+     @tag
     end
 end
