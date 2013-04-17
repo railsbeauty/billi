@@ -1,20 +1,26 @@
 
 <div sytle="margin-left:350px;margin-top:100px;">
- <div style="border: 0px solid #1763A4;border-radius: 4px 4px 4px 4px;margin:; padding: 20px 20px 10px; background: none repeat scroll 0 0 #ffffff; width: 100%; margin-left:150px;">
-	<div style="color:#0077CC;"> <h3> dashboard </h3> </div>
+ <div style="border: 0px solid #1763A4;border-radius: 4px 4px 4px 4px;margin:; padding: 20px 20px 10px; background: none repeat scroll 0 0 #ffffff; width: 100%; margin-left:10px;margin-top:-15px">
+	<div style="color:#0077CC;"> <h3>Admin dashboard </h3> </div>
 <table  class="table table-bordered">
 	<tr style="background-color:#66C9EE;color:white;">
-		<th>User Email</th>
-		<th> User Registered Time</th>
+		<th>User email</th>
+		<th> Username</th>
+		<th> User registered time</th>
 		<th> Login Count</th>
-		<th> Active/Deactive Users</th>
+		<th> Last login time</th>
+		<th> Login sign in ip</th>
+		<th> Active/deactive Users</th>
 	</tr>
 	 <% @users.each do |user| %>
 	<tr class="">
 		<td><%= user.email %></td>
+		<td><%= user.username %></td>
 		<td><%= user.created_at %></td>
-		<td><%= user. sign_in_count %></td>
-		<td> </td>	
+		<td><%= user.sign_in_count %></td>
+		<td><%= user.last_sign_in_at %></td>
+		<td><%= user.current_sign_in_ip %></td>
+		<td> <%= user.current_sign_in_ip %> </td>	
 	</tr>
 	<% end %>
 </table>
