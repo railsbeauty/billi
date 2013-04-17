@@ -8,11 +8,11 @@
   <div style="font-size: 1.6em"> <%= link_to article.title, article_path(article) %></div>
   <div id="tabs"> 
   <ul id="tabs">
-    <li><div style="color:#82b548;">  <%= time_tag(article.created_at.in_time_zone("Asia/Calcutta")) %> </div></li>
-    <li> <div style="color:#4895d1; font-size: 1.2em">  <%= article.user.username if article.user %></div></li>
+    <li><div style="color:#82b548;font-size: 0.9em;">  <%= time_tag(article.created_at.in_time_zone("Asia/Calcutta")) %> </div></li>
+    <li> <div style="color:#4895d1; font-size: 0.9em;">  <%= article.user.username if article.user %></div></li>
     <% if !article.nil? %>
-      <li><div style="color:#CCD600; font-size: 1.2em;">  <%= article.comments.size %> comments </div></li>
-      <li><div style="color:#CCD600; font-size: 1.2em;"> <%= link_to article.tags.collect(&:name).join(" ") %> </div></li>
+      <li><div style="color:#CCD600; font-size: 0.9em;">  <%= article.comments.size %> comments </div></li>
+      <li><div style="color:#CCD600; font-size: 0.9em;"> <%= link_to article.tags.collect(&:name).join(" ") %> </div></li>
      <% end %>
    </ul>
  </div>
