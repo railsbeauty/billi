@@ -142,3 +142,8 @@ body, input, select, textarea, button {
   color: #fff
 }
 
+.btn.btn-create { 
+    background-color: #D14836;
+    color: #FFFFFF; 
+    background-image: none; /* the background-image needs to be reset */
+}

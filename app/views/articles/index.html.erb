@@ -23,7 +23,7 @@
      <%= link_to "edit",edit_article_path(article), :class => 'btn btn-warning btn' %>
      <%= link_to "delete",article_path(article),:method => :delete,:confirm => 'Are you sure?',:class => 'btn  btn-danger' %>
     <% end %>
-     <%= link_to "view more...",article_path(article), :class => 'btn btn-info btn"' %> 
+     <%= link_to "view more...",article_path(article), :class => 'btn.btn-create' %> 
      
    </div>
      </div>
@@ -37,19 +37,6 @@
   
 <div class="container">
   <div class="row">
-<<<<<<< HEAD
-    <div class="span3" style="margin-top:10px">     
-        <div style="border: px solid #1fb2e8;border-radius: 0px 0px 0px 0px; padding: 0px 0px 5px; background: none repeat scroll 0 #EEEEEE;  width: 105%; margin-top:-1874px;margin-left:570px; height:540px">   
-            <div style="background-color:#1fb2e8; color:#FFFFFF; font-size: 1.6em"> recent article </div>
-             <div style="font-size: 1.3em">
-              <% @first_articles.each do |article_first|%>
-              <% if !article_first.nil? %>
-               <div style="margin-top:15px; margin-left:8px"> <%= link_to article_first.title, 
-               article_path(article_first) %></div> 
-            <% end %>    
-            <% end %>
-                  
-=======
     <div class="span3" style="margin-top:10px">
       
         <div style="border: 1px solid #1fb2e8;border-radius: 0px 0px 0px 0px; padding: 0px 0px 5px; background: none repeat scroll 0 0#FBFBFB;  width: 105%; margin-top:-1544px;margin-left:570px; height:500px">
@@ -61,11 +48,6 @@
             <div style="margin-top:15px; margin-left:8px">  <%= link_to truncate(article_title.title, :length => 20, :separator => ' '), "/articles?id=#{article_title.id}"  %></div>
             <% end %>
             <% end %>
-
-
-           
-                 
->>>>>>> 03fdbf96c77b67999cf090c864f6729e552c3f87
         </ul>
       </div>
       </div> <!-- well -->
@@ -74,15 +56,10 @@
 </div> <!-- container -->
 <div class="container">
   <div class="row">
-<<<<<<< HEAD
-    <div class="span3" style="margin-top:10px">     
-         <div style="border: px solid #1fb2e8;border-radius: 0px 0px 0px 0px; padding: 0px 0px 5px; background: none repeat scroll 0 0 #EEEEEE;  width: 105%; margin-top:-1320px;margin-left:570px; height:440px">  
-=======
+
     <div class="span3" style="margin-top:10px">
       
          <div style="border: 1px solid #1fb2e8;border-radius: 0px 0px 0px 0px; padding: 0px 0px 5px; background: none repeat scroll 0 0 #FBFBFB;  width: 105%; margin-top:-970px;margin-left:570px; height:440px">
-   
->>>>>>> 03fdbf96c77b67999cf090c864f6729e552c3f87
            <div style="font-size: 1.3em">
            <div style="background-color:#1fb2e8; color:#FFFFFF; font-size: 1.6em"> aticles by tags </div>
            <div style="margin-top:15px; margin-left:8px"> <%= link_to "News", "/path1"  %></div>
