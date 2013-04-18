@@ -14,8 +14,12 @@ class ArticlesController < ApplicationController
 	  end
 
     def show
-      @article = Article.find(params[:id])
-      
+       @article = Article.find(params[:id])
+       @related_articles = Article
+      .joins(:taggings)
+      .where('id != ?', @article.id)
+      .where(taggings: { tag_id: @article.tag_id })
+
     end
 
 	  def new

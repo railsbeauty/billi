@@ -1,4 +1,6 @@
-
+<table style="width="100%">
+  <tr>
+    <td style="width="400%"> 
   <div style="border: 1px solid #1fb2e8;border-radius: 00px px px px;margin: 0 0 20px; padding: 0px 0px 2px; background: none repeat scroll 0 0 #E0E0F0; width: 90% ">
 
   <div style="border-bottom: none:border: 0px solid #666666;border-radius: 4px 4px 4px 4px;margin: 0 0 20px; padding: 20px 20px 10px;; background: none repeat scroll 0 0 #FFFFFF ">
@@ -17,6 +19,7 @@
       <% @article.tags.each do |tag| %>
      <%= link_to tag.name, tag_path(tag) %>
       <% end %>
+     
      </li>
      </ul>
    </div>
@@ -48,9 +51,13 @@
    <div style="margin:left:50px; margin:right:50px"> <%= render partial: 'articles/comment', :locals => { :comment => c } %> </div>
     <% end %> 
     </div>
+  </td>
 
-    
-
+  <% @related_articles.each do | related_article | %>
+   <% if !related_article.nil? %>
+   <div style="margin-top:15px; margin-left:8px">  <%= link_to related_article.title,  article_path(related_article) %></div>
+    <% end %>
+   <% end %>
 
 
 
