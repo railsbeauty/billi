@@ -1,18 +1,18 @@
 
 <% if @article.comments.count  >= 1 %>
  <div>
-  <div style="border: 1px solid #66c9ee;border-radius: 6px 6px 6px 6px;margin: 10px 15px 15px; padding: 5px 5px 25px; background: none repeat scroll 0 0 #F2F2F2; width:95%; font-size: 1em">
+  <div style="border: px solid #66c9ee;border-radius: 0px 0px 0px 0px;margin: 10px 15px 15px; padding: 	10px 15px 25px; background: none repeat scroll 0 0 #F2F2F2; width:700px; font-size: 1.2em;border-bottom: 2px solid #DDDDDD;">
   <%= comment.content %>
     <div id="tabula"> 
       <ul id="tabula">
-       <li> <div style="color: #0077CC; font-size: 1.0em;margin-top:4px;background-color:#;"> <%= comment.user.username if comment.user %></div></li>
-       <li> <div style="color: #0077CC; background-color:; margin-top:4px; margin-left:7px;"> <p> <%= time_ago_in_words(comment.created_at.in_time_zone("Asia/Calcutta"))  unless comment.created_at.nil? %> ago </p></div></li>
+       <li> <div style="color: #0077CC;margin-rigth:200px; font-size: 1.0em;margin-top:4px;background-color:#;"> <%= comment.user.username if comment.user %></div></li>
+       <li> <div style="color: #0077CC; background-color:; margin-top:4px; margin-left:25px;"> <p> <%= time_ago_in_words(comment.created_at.in_time_zone("Asia/Calcutta"))  unless comment.created_at.nil? %> ago </p></div></li>
       </ul>
     </div>
   </div>
 </div>
 <% else %>
- <div style="color:#0077CC;"><h5> no comment yet, be first to comment</h5></div>
+ <div style="color:#0077CC;"> no comment yet, be first to comment</div>
 <% end %>
 
 
