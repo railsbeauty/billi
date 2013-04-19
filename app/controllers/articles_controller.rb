@@ -1,11 +1,18 @@
 
 class ArticlesController < ApplicationController
   before_filter :is_user_admin, only: [:new, :create, :edit, :destroy]
+  before_filter :log_impression, :only=> [:show]
    
     def is_user_admin
       redirect_to(action: :index) unless current_user.try(:is_admin?) 
       return false 
     end
+
+   def log_impression
+     @article = Article.find(params[:id])
+     # this assumes you have a current_user method in your authentication system
+      @article.impressions.create(ip_address: request.remote_ip,user_id:current_user.id)
+   end
 
 	  def index
 		  @articles = Article.all(:order => "created_at DESC")
@@ -15,11 +22,10 @@ class ArticlesController < ApplicationController
 
     def show
        @article = Article.find(params[:id])
-       @related_articles = Article
-      .joins(:taggings)
-      .where('articles.id != ?', @article.id)
-      .where(taggings: { tag_id: @article.tag_ids })
-       
+       @related_articles = Article.joins(:taggings).
+       where('articles.id != ?', @article.id)
+       .where(taggings: { tag_id: @article.tag_ids }) 
+      
     end
 
 	  def new
