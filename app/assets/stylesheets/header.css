@@ -331,4 +331,42 @@ body, input, select, textarea, button {
   padding: 9px 18px;
   font-size: 16px;
   line-height: 20px;
-}
+ } 
+
+
+
+
+ #fabs ul {
+ margin-left: 0;
+ padding-left: 0;
+ display: inline;
+ } 
+
+ #fabs ul li {
+ margin-left: 0;
+ margin-bottom: 110;
+ padding: 2px 15px 5px;
+ border: 0px solid #B5B5B5;
+ list-style: none;
+ font-size: 1.2em;
+ 
+ float: left
+ }
+
+ #fabula ul {
+ margin-left: 0;
+ padding-left: 0;
+ display: inline;
+ } 
+
+ #fabula ul li {
+ margin-left: 0;
+ margin-bottom: 110;
+ padding: 0px 0px 0px;
+ border: 0px solid #666666;
+ background-color: #B5B5B5
+ list-style: none;
+ font-size: 1.0em;
+ 
+ float: left
+ }
