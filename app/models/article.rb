@@ -1,11 +1,11 @@
 class Article < ActiveRecord::Base
    attr_accessible :title, :body
-   attr_accessible :tag_list
+   attr_accessible :tag_list,  :dependent => :destroy
    has_many :comments
    belongs_to :user
    has_many :taggings
    has_many :tags, through: :taggings
-   has_many :impressions, :as=>:impressionable
+    has_many :impressions, as: :impressionable
    validates :title, :body, :tag_list,  :presence => true
 
   def impression_count
@@ -15,7 +15,6 @@ class Article < ActiveRecord::Base
   def unique_impression_count
     impressions.group(:ip_address).size #UNTESTED: might not be correct syntax
   end
-
 
    def tag_list
      self.tags.collect do |tag|

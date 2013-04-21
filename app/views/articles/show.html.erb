@@ -7,13 +7,13 @@
       <div style="color:#1fb2e8;"><h2><%= @article.title %></h2></div>
       <div id="tabs"> 
        <ul id="tabs">
-       <li><div style="color:#82b548;">  <%= time_tag(@article.created_at.in_time_zone("Asia/Calcutta")) %> </div></li>
+       <li><div style="color:#4895d1;">  <%= time_tag(@article.created_at.in_time_zone("Asia/Calcutta")) %> </div></li>
        <li> <div style="color:#4895d1; ">  <%= @article.user.username if @article.user %></div></li>
-        <% if ! @article.comments.empty? %>
-        <li><div style="color:#CCD600;">  <%= @article.comments.size %> comments</div></li>
-       <% else %>
-          <li><div style="color:#CCD600;"> no comment </div></li>
-        <% end %>
+       <li><div style="color:#4895d1;">
+        <% unless @article.comments.empty? %>
+       (<%= @article.comments.size %>) comments
+       <% end %></div> </li>
+
        <li>
        <% @article.tags.each do |tag| %>
          <%= link_to tag.name, tag_path(tag) %>
@@ -37,40 +37,49 @@
    </div>
 </div>
 
-  <div id="fabs">
-    <ul id="fabula">
-      <li> <div style="margin-left:300px; font-size:0.9em;color:#1fb2e8;margin-top:-50px">  Viewed: <%=@article.impression_count %> times </div></li>
+   <div id="fabs">
+     <ul id="fabula">
+       <li> <div style="margin-left:250px; font-size:0.9em;color:#1fb2e8;margin-top:-50px">  Viewed: <%=@article.impression_count %> times </div></li>
        <% if ! @article.comments.empty? %>
-         <li> <div style="margin-left:450; font-size:0.9;color:#1fb2e8;margin-top:-50px"> Active: <%=  time_ago_in_words(@article.comments.last.created_at) %> </div></li>
+         <li> <div style="margin-left:350; font-size:0.9;color:#1fb2e8;margin-top:-50px"> Active: <%=  time_ago_in_words(@article.comments.last.created_at) %> ago</div></li>
        <% end %>
        <% if (@article.created_at != @article.updated_at) %>
-         <li><div style="margin-left:650; font-size:0.9em;color:#1fb2e8;margin-top:-50px"> edit: <%= time_ago_in_words(@article.updated_at)  %> </div></li>
+         <li><div style="margin-left:550; font-size:0.9em;color:#1fb2e8;margin-top:-50px"> edit: <%= time_ago_in_words(@article.updated_at)  %> ago</div></li>
        <% end %>
-    </ul>
-  </div> 
+     </ul>
+    </div> 
 
- <hr style="border: 1px solid #E0E0F0; margin-top:35px">
+   <hr style="border: 1px solid #E0E0F0; margin-top:35px">
 
     <div style="border: px solid #1763A4;border-radius: 4px 4px 4px 4px;margin: 0 0 20px;  padding: 20px 30px 0px; background: none repeat scroll 0 0 #; width: 85% ">
       <%= render :partial => 'comment_form' %>
       <% @article.comments.each do |c| %>
-        <% unless  c.nil? %>
-         <% end %>    
+        <% if !c.nil? %>
         <div style="margin:left:50px; margin:right:50px;margin-top:30px"> <%= render partial: 'articles/comment', :locals => { :comment => c } %> </div>
       <% end %> 
+    <% end %> 
     </div>
    </td>
  </tr>
 </table>
- 
+
+
  <% if !@related_articles.empty? %>
-     <div style="border: 1px solid #B5B5B5;border-radius: 00px px px px;margin: 0 0 2px;margin-left:815px;margin-top:400px;width:300px;margin-top:40px">
+     <div style="border: 1px solid #B5B5B5;border-radius: 00px px px px;margin: 0 0 2px;margin-left:835px;margin-top:400px;width:300px;margin-top:40px">
      <div style="background-color:#1fb2e8; color:#FFFFFF; font-size: 1.6em"> Related articles </div>
      <% @related_articles.each do | related_article | %>       
         <div style="margin-top:15px; margin-left:8px; font-size:1.4em;">  <%= link_to  truncate(related_article.title, :length => 35, :separator => ' '),  article_path(related_article) %></div>
       <% end %>
  <% end %>
    
+  <hr style="color:#FFFFFF">
+  <% if !@article_popular.empty? %>
+  <div style="background-color:#1fb2e8; color:#FFFFFF; font-size: 1.6em"> most viewed articles </div>
+  <% @article_popular.each do |article_popular| %>
+  <div style="margin-top:15px; margin-left:8px; font-size:1.4em;">  <%= link_to  truncate(article_popular.title, :length => 35, :separator => ' '),  article_path(article_popular) %></div>
+  <% end %>
+  <% end %>
+</div>
 
 
 
