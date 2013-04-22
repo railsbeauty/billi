@@ -1,89 +1,95 @@
-<table class ="span6">
-  <tr>
-   <td style="width="450%; "> 
-     <div style="border: 1px solid #B5B5B5;border-radius: 00px px px px;margin: 0 0 20px; padding: 0px 0px 2px; background: none repeat scroll 0 0 #ffffff; width: 90%; margin-left:40px;margin-top:40px; border-bottom:none">
+<div class="row-fluid">
+  <div class="span12">
+  <div class ="span9">
+    <div class ="row-fluid">
+      
+      <div id="upperborder">
+          <div id="lowerborder">
+            <div style="color:#1fb2e8;font-size:2.3em;"><%= @article.title %></div>
+             <div id="tabs"> 
+              <ul id="tabs">
+              <li>  <%= time_tag(@article.created_at.in_time_zone("Asia/Calcutta")) %> </li>
+              <li>   <%= @article.user.username if @article.user %></li>
+               <li>
+                 <% unless @article.comments.empty? %>
+                 (<%= @article.comments.size %>) comments
+                 <% end %>
+                 </li>
+                 <li>
+                 <% @article.tags.each do |tag| %>
+                  <%= link_to tag.name, tag_path(tag) %>
+                <% end %>     
+              </li>
+             </ul>
+           </div>            
 
-      <div style="border-bottom: none:border: 1px solid #E0E0F0;border-radius: 4px 4px 4px 4px;margin: 0 0 20px; padding: 20px 20px 10px; background: none repeat scroll 0 0 #FFFFFF ">
-      <div style="color:#1fb2e8;"><h2><%= @article.title %></h2></div>
-      <div id="tabs"> 
-       <ul id="tabs">
-       <li><div style="color:#4895d1;">  <%= time_tag(@article.created_at.in_time_zone("Asia/Calcutta")) %> </div></li>
-       <li> <div style="color:#4895d1; ">  <%= @article.user.username if @article.user %></div></li>
-       <li><div style="color:#4895d1;">
-        <% unless @article.comments.empty? %>
-       (<%= @article.comments.size %>) comments
-       <% end %></div> </li>
+         <hr id="upperline">
+         <div style="font-size: 1.2em"><%= @article.body %></div>
 
-       <li>
-       <% @article.tags.each do |tag| %>
-         <%= link_to tag.name, tag_path(tag) %>
-       <% end %>     
-     </li>
-     </ul>
-   </div>
+       <div id="tabs"> 
+          <ul id="tabs">
+            <div style="margin-top:20px; margin-left:10px"> <li> <%= link_to "back",articles_path, :class => ''  %></li></div>
+             <% if current_user.try (:is_admin) %>
+              <div style="margin-top:20px;margin-left:-10px""> <li> <%= link_to "edit", edit_article_path(@article), :class => '' %></li> </div>
+              <div style="margin-top:20px"> <li> <%= link_to "delete",article_path(@article),:method => :delete,:confirm => 'Are you sure?',:class => '' %></li> </div>
+            <% end %>
+          </ul>
+        </div>
+       
 
-  <hr style="border: 1px normal #E0E0F0; margin-top:35px">
-  <div style="font-size: 1.2em"><%= @article.body %></div>
+       <div id="fabs">
+         <ul id="fabula">
+           <div style="margin-left:250px; font-size:1.2em;color:#1fb2e8;margin-top:-0px">  Viewed: <%=@article.impression_count %> times, 
+           <% if (@article.created_at != @article.updated_at) %>
+           edit: <%= time_ago_in_words(@article.updated_at) %> ago,
+           <% end %>
+           <% if ! @article.comments.empty? %>
+           Active: <%=  time_ago_in_words(@article.comments.last.created_at) %> ago
+           <% end %>
+           </div>
+         </ul>
+       </div>
+
  
-  <div id="tabs"> 
-    <ul id="tabs">
-       <div style="margin-top:20px; margin-left:-30px"> <li> <%= link_to "back",articles_path, :class => ''  %></li></div>
-        <% if current_user.try (:is_admin) %>
-         <div style="margin-top:20px;margin-left:-10px""> <li> <%= link_to "edit", edit_article_path(@article), :class => '' %></li> </div>
-         <div style="margin-top:20px"> <li> <%= link_to "delete",article_path(@article),:method => :delete,:confirm => 'Are you sure?',:class => '' %></li> </div>
-         <% end %>
-        </ul>
+       <hr style="border: 1px solid #E0E0F0; margin-top:50px">
+       <div id="commentform">
+         <%= render :partial => 'comment_form' %>
+           <% @article.comments.each do |c| %>
+             <% if !c.nil? %>
+               <div id ="commentdisplay"> <%= render partial: 'articles/comment', :locals => { :comment => c } %> </div>
+             <% end %> 
+            <% end %> 
+       </div> 
+      </div>
      </div>
    </div>
-</div>
-
-   <div id="fabs">
-     <ul id="fabula">
-       <li> <div style="margin-left:250px; font-size:0.9em;color:#1fb2e8;margin-top:-50px">  Viewed: <%=@article.impression_count %> times </div></li>
-       <% if ! @article.comments.empty? %>
-         <li> <div style="margin-left:350; font-size:0.9;color:#1fb2e8;margin-top:-50px"> Active: <%=  time_ago_in_words(@article.comments.last.created_at) %> ago</div></li>
-       <% end %>
-       <% if (@article.created_at != @article.updated_at) %>
-         <li><div style="margin-left:550; font-size:0.9em;color:#1fb2e8;margin-top:-50px"> edit: <%= time_ago_in_words(@article.updated_at)  %> ago</div></li>
-       <% end %>
-     </ul>
-    </div> 
-
-   <hr style="border: 1px solid #E0E0F0; margin-top:35px">
-
-    <div style="border: px solid #1763A4;border-radius: 4px 4px 4px 4px;margin: 0 0 20px;  padding: 20px 30px 0px; background: none repeat scroll 0 0 #; width: 85% ">
-      <%= render :partial => 'comment_form' %>
-      <% @article.comments.each do |c| %>
-        <% if !c.nil? %>
-        <div style="margin:left:50px; margin:right:50px;margin-top:30px"> <%= render partial: 'articles/comment', :locals => { :comment => c } %> </div>
-      <% end %> 
-    <% end %> 
-    </div>
-   </td>
- </tr>
-</table>
-
-
- <% if !@related_articles.empty? %>
-     <div style="border: 1px solid #B5B5B5;border-radius: 00px px px px;margin: 0 0 2px;margin-left:835px;margin-top:400px;width:300px;margin-top:40px">
-     <div style="background-color:#1fb2e8; color:#FFFFFF; font-size: 1.6em"> Related articles </div>
-     <% @related_articles.each do | related_article | %>       
-        <div style="margin-top:15px; margin-left:8px; font-size:1.4em;">  <%= link_to  truncate(related_article.title, :length => 35, :separator => ' '),  article_path(related_article) %></div>
-      <% end %>
- <% end %>
-   
-  <hr style="color:#FFFFFF">
-  <% if !@article_popular.empty? %>
-  <div style="background-color:#1fb2e8; color:#FFFFFF; font-size: 1.6em"> most viewed articles </div>
-  <% @article_popular.each do |article_popular| %>
-  <div style="margin-top:15px; margin-left:8px; font-size:1.4em;">  <%= link_to  truncate(article_popular.title, :length => 35, :separator => ' '),  article_path(article_popular) %></div>
-  <% end %>
-  <% end %>
-</div>
-
-
-
-
+      
+       <div class="span3">    
+         <div id="popular"> 
+          <% if !@article_popular.empty? %>
+            <div id="headerpopular"> most viewed articles </div>
+             <% @article_popular.each do |article_popular| %>
+              <div id="popular-title">  <%= link_to  truncate(article_popular.title, :length => 35, :separator => ' '),  article_path(article_popular) %></div>
+             <% end %>
+          <% end %>
+        </div>
+     </div>
+   </div>
+       
+       <% if !@related_articles.empty? %>
+       <div id = "related-border">
+            <div id="related-title"> Related articles </div>
+            <% @related_articles.each do | related_article | %>       
+              <div id="related-title-link">  <%= link_to  truncate(related_article.title, :length => 35, :separator => ' '),  article_path(related_article) %></div>
+            <% end %>
+          </div> 
+         <% else %>
+          <div id="related-border">
+            <div id="ygm"> You got us ! </div>
+            <div id="nofound"><h3> no related article found :(</h3></div>
+          </div> 
+        <% end %>
+    
 
 
 

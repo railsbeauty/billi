@@ -11,8 +11,13 @@ class CommentsController < ApplicationController
 	  @comment.save
 	    flash[:success] = "Comment created!"
 	    redirect_to article_path(@comment.article)
-	 
 	end
+     
+    def edit
+    end
+
+    def update
+    end
 
 	def destroy
 	end

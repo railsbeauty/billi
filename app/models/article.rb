@@ -1,11 +1,11 @@
 class Article < ActiveRecord::Base
    attr_accessible :title, :body
-   attr_accessible :tag_list,  :dependent => :destroy
+   attr_accessible :tag_list
    has_many :comments
    belongs_to :user
-   has_many :taggings
-   has_many :tags, through: :taggings
-    has_many :impressions, as: :impressionable
+   has_many :taggings, :dependent => :destroy
+   has_many :tags, through: :taggings , :dependent => :destroy
+    has_many :impressions, as: :impressionable 
    validates :title, :body, :tag_list,  :presence => true
 
   def impression_count
