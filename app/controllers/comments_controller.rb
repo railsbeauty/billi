@@ -14,12 +14,27 @@ class CommentsController < ApplicationController
 	end
      
     def edit
-    end
+      @comment = Comment.find(params[:id])
+     end
 
-    def update
+   def update
+    @comment = Comment.find(params[:id])
+    @article = @comment.article
+    respond_to do |format|
+      if @comment.update_attributes(params[:comment])
+        redirect_to article_path(@comment.article)
+      else
+       render  'edit' 
+      end
     end
+  end
 
 	def destroy
-	end
+     @comment = Comment.find(params[:id])
+     @article = Article.find(params[:article_id])
+     @comment.destroy
+     redirect_to(@article_path(@article) 
+    end
+ 
 
 end
