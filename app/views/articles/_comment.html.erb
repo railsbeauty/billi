@@ -5,7 +5,6 @@
             <ul id="tabula">
              <li> <div style="color: #0077CC;margin-rigth:200px; font-size: 1.0em;margin-top:4px;background-color:#;"> <%= comment.user.username if comment.user %></div></li>
              <li> <div style="color: #0077CC; background-color:; margin-top:4px; margin-left:25px;"> <p> <%= time_ago_in_words(comment.created_at.in_time_zone("Asia/Calcutta"))  unless comment.created_at.nil? %>  </p></div></li>
-              <%= link_to 'Edit', edit_article_comment_path(@article, comment) %> |
             </ul>
            </div>
           </div>
