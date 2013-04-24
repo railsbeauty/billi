@@ -34,8 +34,7 @@
               <div style="margin-top:20px"> <li> <%= link_to "delete",article_path(@article),:method => :delete,:confirm => 'Are you sure?',:class => '' %></li> </div>
             <% end %>
           </ul>
-        </div>
-       
+        </div>       
 
        <div id="fabs">
          <ul id="fabula">
@@ -49,7 +48,6 @@
            </div>
          </ul>
        </div>
-
  
        <hr style="border: 1px solid #E0E0F0; margin-top:50px">
        <div id="commentform">
@@ -77,21 +75,16 @@
    </div>
        
        <% if !@related_articles.empty? %>
-       <div id = "related-border">
-            <div id="related-title"> Related articles </div>
-            <% @related_articles.each do | related_article | %>       
-              <div id="related-title-link">  <%= link_to  truncate(related_article.title, :length => 35, :separator => ' '),  article_path(related_article) %></div>
-            <% end %>
-          </div> 
-         <% else %>
+          <div id = "related-border">
+          <div id="related-title"> Related articles </div>
+          <% @related_articles.each do | related_article | %>       
+          <div id="related-title-link">  <%= link_to  truncate(related_article.title, :length => 35, :separator => ' '),  article_path(related_article) %></div>
+        <% end %>
+        </div> 
+        <% else %>
           <div id="related-border">
-            <div id="ygm"> You got us ! </div>
-            <div id="nofound"><h3> no related article found :(</h3></div>
+          <div id="ygm"> You got us ! </div>
+          <div id="nofound"><h3> no related article found :(</h3></div>
           </div> 
         <% end %>
     
-
-
-
-
-

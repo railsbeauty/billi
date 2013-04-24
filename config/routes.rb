@@ -4,20 +4,11 @@ Mau::Application.routes.draw do
   resources :articles
   resources :dashboard
   resources :tags
-<<<<<<< HEAD
   resources :comments
   resources :articles do
     resources :comments
   end
-=======
-
-  resources :articles do
-    resources :comments
-  end
-
->>>>>>> 4dcf6bf3a59f36aaadd15d209a493fa0ebba8ab0
-end
-
+end 
   # The priority is based upon order of creation:
   # first created -> highest priority.
 

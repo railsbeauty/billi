@@ -14,9 +14,11 @@ class CommentsController < ApplicationController
 	end
 
     def edit
-    @comment =  Comment.find(params[:id])
-    end
-    
+     @comment =  Comment.find(params[:id])
+     @article = @comment.article
+     # @article = Article.find(params[:article_id])
+     #@comment = @article.comments
+    end   
 
     def update
      @comment = Comment.find(params[:id])
@@ -29,10 +31,11 @@ class CommentsController < ApplicationController
     end
 
 	def destroy
-     @comment = Comment.find(params[:id])
-    @article = Article.find(params[:article_id])
-    @comment.destroy
-       redirect_to article_path(@artilce) 
+    
+      @comment = Comment.find(params[:id])
+      @article = Article.find(params[:article_id])
+      @comment.destroy
+      redirect_to article_path(@artilce) 
 	end
 
 end

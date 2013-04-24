@@ -1,16 +1,14 @@
 <% if @article.comments.count  >= 1 %>
-  <div style="border: px solid #66c9ee;border-radius: 0px 0px 0px 0px;margin: 10px -30px 15px; padding: 	10px 15px 25px; background: none repeat scroll 0 0 #F2F2F2; width:700px; font-size: 1.2em;border-bottom: 0px solid #DDDDDD;">
-    <% @article.comments.each do |comment| %>
+  <div style="border: px solid #66c9ee;border-radius: 0px 0px 0px 0px;margin: 10px -30px 15px; padding: 	10px 15px 25px; background: none repeat scroll 0 0 #F2F2F2; width:700px; font-size: 1.2em;border-bottom: 0px solid #DDDDDD;">   
       <%= comment.content %>
          <div id="tabula"> 
             <ul id="tabula">
              <li> <div style="color: #0077CC;margin-rigth:200px; font-size: 1.0em;margin-top:4px;background-color:#;"> <%= comment.user.username if comment.user %></div></li>
              <li> <div style="color: #0077CC; background-color:; margin-top:4px; margin-left:25px;"> <p> <%= time_ago_in_words(comment.created_at.in_time_zone("Asia/Calcutta"))  unless comment.created_at.nil? %>  </p></div></li>
              <li> <div style="color: #0077CC; background-color:; margin-top:4px; margin-left:25px;"> <%= link_to "edit", edit_article_comment_path(@article ,comment) %> </div></li>
+            <li> <div style="color: #0077CC; background-color:; margin-top:4px; margin-left:25px;"> <%= link_to 'Delete', article_comment_path(@article, comment), :confirm => 'Are you sure?', :method => :delete %> </div></li>
             </ul>
            </div>
-          </div>
-          <% end %>
     <% else %>
         <div style="color:#0077CC;margin-left:25px;font-size:1.4em;"> be first to comment</div>
   <% end %>
