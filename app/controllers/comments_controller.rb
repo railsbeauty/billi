@@ -12,7 +12,7 @@ class CommentsController < ApplicationController
 	    flash[:success] = "Comment created!"
 	    redirect_to article_path(@comment.article)
 	end
-     
+
     def edit
     @comment =  Comment.find(params[:id])
     end
