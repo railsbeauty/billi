@@ -4,9 +4,10 @@ Mau::Application.routes.draw do
   resources :articles
   resources :dashboard
   resources :tags
-  resources :articles do
   resources :comments
-end
+  resources :articles do
+    resources :comments
+  end
 end
 
   # The priority is based upon order of creation:

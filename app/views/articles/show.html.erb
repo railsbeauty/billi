@@ -53,10 +53,10 @@
  
        <hr style="border: 1px solid #E0E0F0; margin-top:50px">
        <div id="commentform">
-         <%= render :partial => 'comment_form' %>
+         <%= render :partial => 'comments/comment_form' %>
            <% @article.comments.each do |c| %>
              <% if !c.nil? %>
-               <div id ="commentdisplay"> <%= render partial: 'articles/comment', :locals => { :comment => c } %> </div>
+               <div id ="commentdisplay"> <%= render partial: 'comments/comment', :locals => { :comment => c } %> </div>
              <% end %> 
             <% end %> 
        </div> 

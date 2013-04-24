@@ -1,5 +1,5 @@
 class CommentsController < ApplicationController
-	 before_filter :user_signed_in, except: [:create]
+	
 	def new
 	  @comment = Comment.new
 	end
@@ -14,12 +14,25 @@ class CommentsController < ApplicationController
 	end
      
     def edit
+    @comment =  Comment.find(params[:id])
     end
+    
 
     def update
+     @comment = Comment.find(params[:id])
+     @article = @comment.article
+      if @comment.update_attributes(params[:comment])
+        redirect_to article_path(@article)
+      else
+       render :action => "edit" 
+      end
     end
 
 	def destroy
+     @comment = Comment.find(params[:id])
+    @article = Article.find(params[:article_id])
+    @comment.destroy
+       redirect_to article_path(@artilce) 
 	end
 
 end
