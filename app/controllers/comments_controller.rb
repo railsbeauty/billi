@@ -24,6 +24,7 @@ class CommentsController < ApplicationController
      @comment = Comment.find(params[:id])
      @article = @comment.article
       if @comment.update_attributes(params[:comment])
+        flash[:success] = "Comment updated!"
         redirect_to article_path(@article)
       else
        render :action => "edit" 
@@ -31,11 +32,11 @@ class CommentsController < ApplicationController
     end
 
 	def destroy
-    
-      @comment = Comment.find(params[:id])
+
       @article = Article.find(params[:article_id])
+      @comment = @article.comments.find(params[:id])
       @comment.destroy
-      redirect_to article_path(@artilce) 
+      redirect_to article_path(@article) 
 	end
 
 end
