@@ -10,7 +10,7 @@
               <ul id="tabs">
               <li>  <%= time_tag(@article.created_at.in_time_zone("Asia/Calcutta")) %> </li>
               <li>   <%= @article.user.username if @article.user %></li>
-               <li>
+              <li>
                  <% unless @article.comments.empty? %>
                  (<%= @article.comments.size %>) comments
                  <% end %>
@@ -30,9 +30,10 @@
           <ul id="tabs">
             <div style="margin-top:20px; margin-left:10px"> <li> <%= link_to "back",articles_path, :class => ''  %></li></div>
              <% if current_user.try (:is_admin) %>
-              <div style="margin-top:20px;margin-left:-10px""> <li> <%= link_to "edit", edit_article_path(@article), :class => '' %></li> </div>
-              <div style="margin-top:20px"> <li> <%= link_to "delete",article_path(@article),:method => :delete,:confirm => 'Are you sure?',:class => '' %></li> </div>
-            <% end %>
+               <div style="margin-top:20px;margin-left:-10px""> <li> <%= link_to "edit", edit_article_path(@article) %></li> </div>
+               <div style="margin-top:20px"> <li> <%= link_to "delete",article_path(@article),:method => :delete,:confirm => 'Are you sure?' %></li> </div>
+             <% end %>
+             <div style="margin-top:20px;margin-left:-10px""> <li> edit by<%= @article.user_id %> </div>
           </ul>
         </div>       
 

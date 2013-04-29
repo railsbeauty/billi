@@ -1,7 +1,7 @@
 
 class ArticlesController < ApplicationController
-  before_filter :is_user_admin, only: [:new, :create, :edit, :destroy]
-  before_filter :log_impression, :only=> [:show]
+    before_filter :is_user_admin, only: [:new, :create, :edit, :destroy]
+  
    
     def is_user_admin
       redirect_to(action: :index) unless current_user.try(:is_admin?) 
@@ -24,6 +24,8 @@ class ArticlesController < ApplicationController
       @article = Article.find(params[:id])
       @related_articles = Article.joins(:taggings).where('articles.id != ?', @article.id).where(taggings: { tag_id: @article.tag_ids })           
       @article_popular =  Article.order('articles.impressions_count DESC').limit(5)
+      @article.user_id = current_user.id
+
     end
 
 	  def new
@@ -41,12 +43,6 @@ class ArticlesController < ApplicationController
       end 
     end
 
-    def destroy
-      @article = Article.find(params[:id])
-      @article.destroy
-      redirect_to action:  'index'	
-    end
-
     def edit
       @article = Article.find(params[:id])
     end
@@ -54,11 +50,18 @@ class ArticlesController < ApplicationController
     def update
       @article = Article.find(params[:id])
       if @article.update_attributes(params[:article])
-       flash.notice = "Article '#{@article.title}' Updated!"
-       redirect_to article_path(@article)
+        flash.notice = "Article '#{@article.title}' Updated!"
+        redirect_to article_path(@article)
+        @article_update_user = current_user.id
       else 
         render 'edit'
       end
     end
+
+    def destroy
+      @article = Article.find(params[:id])
+      @article.destroy
+      redirect_to action:  'index'  
+     end
 end
 
