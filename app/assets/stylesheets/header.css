@@ -245,6 +245,66 @@ color:#1fb2e8;
 font-size: 1.6em;
 }
 
+#comment-body
+{
+border: 1px solid #bbb;
+border-radius: 4px 4px 4px 4px;
+margin: 0 10 0px;
+padding: 19px 20px 10px;
+background: none repeat scroll 0 0 #ffffff;
+width: 110%;
+margin-left:-25px;
+height:100%;
+}
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
 
 
 
@@ -452,7 +512,7 @@ font-size: 1.6em;
  } 
 
  #fabs ul li {
- margin-left: 0;
+ margin-left: 50;
  margin-bottom: 110;
  padding: 2px 15px 5px;
  border: 0px solid #B5B5B5;
@@ -463,20 +523,19 @@ font-size: 1.6em;
  }
 
  #fabula ul {
- margin-left: 0;
+ margin-left: 50;
  padding-left: 0;
  display: inline;
  } 
 
  #fabula ul li {
- margin-left: 0;
+ margin-left: 50;
  margin-bottom: 110;
  padding: 0px 0px 0px;
  border: 0px solid #666666;
  background-color: #B5B5B5
  list-style: none;
  font-size: 1.0em;
- 
- float: left
+ float: right;
  }
 

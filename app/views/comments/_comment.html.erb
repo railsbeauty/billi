@@ -1,5 +1,5 @@
 <% if @article.comments.count  >= 1 %>
- <div style="border: 1px solid #bbb;border-radius: 4px 4px 4px 4px;margin: 0 10 0px; padding: 19px 20px 10px; background: none repeat scroll 0 0 #ffffff; width: 110%; margin-left:-25px;height:100%">
+ <div id="comment-body">
   <div style="border: px solid #66c9ee;border-radius: 4px 4px 4px 4px;margin:  -19px -19px 10px; padding: 	1px 6px 25px; background: none repeat scroll 0 0 #DDD; width:715px;height:15px; font-size: 1.2em;border-bottom: 0px solid #DDDDDD;"> 
     <div id="tabula"> 
       <ul id="tabula">
@@ -11,15 +11,16 @@
     </div>
   <div style="border: px solid #66c9ee;border-radius: 0px 0px 0px 0px;margin: -10px -20px -10px; padding:10px 15px 25px; background: none repeat scroll 0 0 ; font-size: 1.2em;border-bottom: 0px solid #DDDDDD;"> 
     <%= comment.content %>
+    </div>
       <div id="tabula"> 
        <ul id="tabula">
-        <li> <div style="color: #0077CC; background-color:; margin-top:2px; margin-left:0px;"> <%= link_to "edit", edit_article_comment_path(@article ,comment) %> </div></li>
-         <li> <div style="color: #0077CC; background-color:; margin-top:2px; margin-left:15px;"> <%= link_to 'Delete', article_comment_path(@article,comment), :confirm => 'Are you sure?', :method => :delete %> </div></li>
-         <li> <div style="color: #0077CC; background-color:; margin-top:2px; margin-left:15px;"> <%= link_to 'Reply' %> </div></li>
+        <li> <div style="color: #0077CC; background-color:; margin-top:-8px; margin-left:0px;"> <%= link_to "edit", edit_article_comment_path(@article ,comment) %> </div></li>
+         <li> <div style="color: #0077CC; background-color:; margin-top:-8px; margin-left:15px;"> <%= link_to 'Delete', article_comment_path(@article,comment), :confirm => 'Are you sure?', :method => :delete %> </div></li>
+         <li> <div style="color: #0077CC; background-color:; margin-top:-8px; margin-left:15px;"> <%= link_to 'Reply' %> </div></li>
         </ul>
         </div>
         </div>
-      </div>
+      
       <% else %>
      <div style="color:#0077CC;margin-left:25px;font-size:1.4em;"> be first to comment</div>
     <% end %>

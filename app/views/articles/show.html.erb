@@ -25,7 +25,6 @@
 
          <hr id="upperline">
          <div style="font-size: 1.2em"><%= @article.body %></div>
-
        <div id="tabs"> 
           <ul id="tabs">
             <div style="margin-top:20px; margin-left:10px"> <li> <%= link_to "back",articles_path, :class => ''  %></li></div>
@@ -33,18 +32,19 @@
                <div style="margin-top:20px;margin-left:-10px""> <li> <%= link_to "edit", edit_article_path(@article) %></li> </div>
                <div style="margin-top:20px"> <li> <%= link_to "delete",article_path(@article),:method => :delete,:confirm => 'Are you sure?' %></li> </div>
              <% end %>
-             <div style="margin-top:20px;margin-left:-10px""> <li> edit by<%= @article.user_id %> </div>
           </ul>
         </div>       
 
        <div id="fabs">
          <ul id="fabula">
-           <div style="margin-left:250px; font-size:1.2em;color:#1fb2e8;margin-top:-0px">  Viewed: <%=@article.impression_count %> times, 
+           <div style="margin-left:540px;margin-top:5px; font-size:1.2em;color:#1fb2e8;">  Viewed: <strong><%=@article.impression_count %> times </strong> </div>
+           <div style="margin-left:540px;margin-top:5px; font-size:1.2em;color:#1fb2e8;">
            <% if (@article.created_at != @article.updated_at) %>
-           edit: <%= time_ago_in_words(@article.updated_at) %> ago,
-           <% end %>
+           edit: <strong> <%= time_ago_in_words(@article.updated_at) %>  ago </strong>
+           <% end %></div>
+           <div style="margin-left:540px;margin-top:5px; font-size:1.2em;color:#1fb2e8;">
            <% if ! @article.comments.empty? %>
-           Active: <%=  time_ago_in_words(@article.comments.last.created_at) %> ago
+           Active: <strong> <%=  time_ago_in_words(@article.comments.last.created_at) %> ago </strong> 
            <% end %>
            </div>
          </ul>
