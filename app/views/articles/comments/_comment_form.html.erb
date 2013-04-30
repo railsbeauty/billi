@@ -1,0 +1,6 @@
+<%= form_for ([@article, Comment.new]) do |f| %>
+ <%= f.text_area :content, :style => "width:727px; height:100px; border: 1px solid #999999;margin-top:80px; background-color:#FFFFFF;margin-left:-33px" %>
+     <div class="actions">
+     <%= f.submit "Add Comment", :style => "margin-right:20px; margin-left:560px; background-color:#66C9Ef; color:#FFFFFF; border: 0px solid #82b548; border-radius: 3px 3px 3px 3px; font-size: 1.3rem;" %>
+  </div>
+<% end %>
