@@ -1,6 +1,6 @@
 <% if @article.comments.count  >= 1 %>
  <div id="comment-body">
-  <div style="border: px solid #66c9ee;border-radius: 4px 4px 4px 4px;margin:  -19px -19px 10px; padding: 	1px 6px 25px; background: none repeat scroll 0 0 #DDD; width:715px;height:15px; font-size: 1.2em;border-bottom: 0px solid #DDDDDD;"> 
+  <div id="comment-inner-body"> 
     <div id="tabula"> 
       <ul id="tabula">
        <li> <div style="color: #0077CC;margin-right:10px; font-size: 1.0em;margin-top:8px;background-color:#;"> <strong> <%= comment.user.username if comment.user %></strong></div></li> 
@@ -9,7 +9,7 @@
       </ul>
      </div>  
     </div>
-  <div style="border: px solid #66c9ee;border-radius: 0px 0px 0px 0px;margin: -10px -20px -10px; padding:10px 15px 25px; background: none repeat scroll 0 0 ; font-size: 1.2em;border-bottom: 0px solid #DDDDDD;"> 
+  <div id="comment-content"> 
     <%= comment.content %>
     </div>
       <div id="tabula"> 

@@ -1,18 +1,22 @@
 
-<div style="width:100p;height:300px;border:1px solid #D8DEE2;border-radius: 8px 8px 8px 8px; solid;margin-left:350px;margin-top:100px;background-color:whilte;font-weight: bold;box-shadow: 0 0 00px 0px #D4C0AA inset;">
+<div style="width:100p;height:300px;border:1px solid #D8DEE2;border-radius: 8px 8px 8px 8px; solid;margin-left:350px;margin-top:100px;background-color:whilte;font-weight: bold;box-shadow: 0 0 00px 0px #D4C0AA inset;height:350px">
 	<div class="auth-form-header"> <h4>Welcome to learning experience</h4> </div>
 	  <%= form_for(resource, :as => resource_name, :url => session_path(resource_name)) do |f| %>
-	     <div style="margin-left:22px;margin-top:10px;> <%= f.label :email or  f.label :username %><br />
-	     <%= f.email_field :email, :size => "80%", :autofocus => true %></div>
-	     <div style="margin-left:22px;length:150px> <%= f.label :password %><br />
-	     <%= f.password_field :password %></div>
-	     <div style="margin-left:22px;"><%= f.submit "Log in", :class => "btn" %></div>
+	     <div style="margin-left:22px;margin-top:10px;>  <%= f.label :email or  f.label :username %><br /></div>
+	     <div style="margin-left:22px;margin-top:10px;"><%= f.email_field :email, :size => "80%", :autofocus => true %></div>
+
+	     <div style="margin-left:22px;margin-top:10px;"> <strong> <%= f.label :password %> </strong><br /> </div>
+	     <div style="margin-left:22px;margin-top:-10px;"> <%= f.password_field :password %>  </div>
+
+	     <div style="margin-left:22px;margin-top:20px;"><%= f.submit "Log in", :class => 'btn btn-info btn-small' %></div>
 	     <% if devise_mapping.rememberable? -%>
-	         <div style="margin-left:22px;"><%= f.check_box :remember_me %> <%= f.label :remember_me %></div>
+	         <div style="margin-left:112px;margin-top:-25px;"><%= f.check_box :remember_me %> </div>
+	        <div style="margin-left:132px;margin-top:-16px;"> <%= f.label :remember_me %></div>
 	     <% end -%>
 	   <% end %>
-	<div style="margin-left:22px;"><%= render "devise/shared/links" %></div>
+	<div style="margin-left:25px;margin-top:25px"><%= render "devise/shared/links" %></div>
 </div>
+
 
 
 

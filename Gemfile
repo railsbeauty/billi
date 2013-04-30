@@ -29,10 +29,9 @@ end
 gem 'jquery-rails'
 gem 'devise'
 gem 'will_paginate'
-gem 'redactor-rails'
+
 gem 'twitter-bootstrap-rails'
-gem "carrierwave"
-gem "mini_magick"
+
 
  gem 'therubyracer', :platform => :ruby 
 
