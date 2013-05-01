@@ -110,16 +110,23 @@ body, input, select, textarea, button {
 .field_with_errors {
   padding: -2px;
   background-color: whilte;
-  display: ;
+  display: inline;
 }
 
-pre {
+
+.field_with_errors .message {
+  color: #D00;
+  padding-left: 280px;
+  font-size: 12px;
+  margin-top: -30px;
+}
+
+pre label, input, button, select, textarea {
     background-color: #FFFFFF;
-    
     border-radius: px px px px;
     display: block;
     font-size: 13px;
-    line-height: 20px;
+    line-height: 12px;
     margin: 0 0 10px;
     padding: 0px;
     white-space: pre-wrap;
@@ -137,7 +144,7 @@ pre {
     background-color: #FFFFFF;
     display: block;
     font-size: 13px;
-    line-height: 20px;
+    line-height: 12px;
     margin: 0 0 10px; 
     white-space: pre-wrap;
     word-break: break-all;
@@ -149,6 +156,24 @@ code, pre {
     font-family: Monaco,Menlo,Consolas,"Courier New",monospace;
     font-size: 12px;
     padding: 0 3px 2px;
+}
+
+
+html, body, div, span, applet, object, iframe, h1, h2, h3, h4, h5, h6, p, blockquote, pre, a, abbr, acronym, address, big, cite, code, del, dfn, em, img, ins, kbd, q, s, samp, small, strike, strong, sub, sup, tt, var, b, u, i, center, dl, dt, dd, ol, ul, li, fieldset, form, label, legend, table, caption, tbody, tfoot, thead, tr, th, td, article, aside, canvas, details, embed, figure, figcaption, footer, header, hgroup, menu, nav, output, ruby, section, summary, time, mark, audio, video {
+    border: 0 none;
+}
+html, body, div, span, applet, object, iframe, h1, h2, h3, h4, h5, h6, p, blockquote, pre, a, abbr, acronym, address, big, cite, code, del, dfn, em, img, ins, kbd, q, s, samp, small, strike, strong, sub, sup, tt, var, b, u, i, center, dl, dt, dd, ol, ul, li, fieldset, form, label, legend, table, caption, tbody, tfoot, thead, tr, th, td, article, aside, canvas, details, embed, figure, figcaption, footer, header, hgroup, menu, nav, output, ruby, section, summary, time, mark, audio, video {
+    border: 0 none;
+    margin: 0;
+}
+label {
+    display: block;
+    margin-bottom: 5px;
+}
+label, input, button, select, textarea {
+    font-size: 14px;
+    font-weight: normal;
+    line-height: 12px;
 }
 
 }

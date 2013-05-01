@@ -9,10 +9,10 @@
 	     <div style="margin-left:42px;margin-top:-10px;"> <%= f.password_field :password %>  </div>
 
 	     <div style="margin-left:42px;margin-top:20px;"><%= f.submit "Log in", :class => 'btn btn-info btn-small' %></div>
-	    <div style="margin-left:122px;margin-top:-25px;"> <%= f.submit 'Clear Form', :type => 'reset' %> </div>
+	   
 	     <% if devise_mapping.rememberable? -%>
-	         <div style="margin-left:45px;margin-top:12px;"><%= f.check_box :remember_me %> </div>
-	        <div style="margin-left:70px;margin-top:-17px;"> <%= f.label :remember_me %></div>
+	         <div style="margin-left:145px;margin-top:-22px;"><%= f.check_box :remember_me %> </div>
+	        <div style="margin-left:170px;margin-top:-18px;"> <%= f.label :remember_me %></div>
 	     <% end -%>
 	   <% end %>
 	<div style="margin-left:40px;margin-top:17px"><%= render "devise/shared/links" %></div>
