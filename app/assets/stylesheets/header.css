@@ -108,9 +108,55 @@ body, input, select, textarea, button {
 
 
 .field_with_errors {
-  padding: 2px;
-  background-color: light-green;
-  display: table;
+  padding: -2px;
+  background-color: whilte;
+  display: ;
+}
+
+pre {
+    background-color: #FFFFFF;
+    
+    border-radius: px px px px;
+    display: block;
+    font-size: 13px;
+    line-height: 20px;
+    margin: 0 0 10px;
+    padding: 0px;
+    white-space: pre-wrap;
+    word-break: break-all;
+    word-wrap: break-word;
+}
+code, pre {
+    border-radius: px px px px;
+    color: ;
+    font-family: Monaco,Menlo,Consolas,"Courier New",monospace;
+    font-size: 12px;
+    padding: 0 0px 0px;
+
+pre {
+    background-color: #FFFFFF;
+    display: block;
+    font-size: 13px;
+    line-height: 20px;
+    margin: 0 0 10px; 
+    white-space: pre-wrap;
+    word-break: break-all;
+    word-wrap: break-word;
+}
+code, pre {
+    border-radius: 3px 3px 3px 3px;
+    color: #333333;
+    font-family: Monaco,Menlo,Consolas,"Courier New",monospace;
+    font-size: 12px;
+    padding: 0 3px 2px;
+}
+
+}
+element.style {
+    font-weight: bold;
+}
+body, input, select, textarea, button {
+    font: 13px/1.4 Helvetica,arial,freesans,clean,sans-serif;
 }
 
 #errorExplanation {
@@ -278,58 +324,21 @@ font-size: 1.2em;
 border-bottom: 0px solid #DDDDDD;
 }
 
+input, textarea, .uneditable-input {
+    width: 260px;
+}
 
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
+select, textarea, input[type="text"], input[type="password"], input[type="datetime"], input[type="datetime-local"], input[type="date"], input[type="month"], input[type="time"], input[type="week"], input[type="number"], input[type="email"], input[type="url"], input[type="search"], input[type="tel"], input[type="color"], .uneditable-input {
+    border-radius: 4px 4px 4px 4px;
+    color: #555555;
+    display: inline-block;
+    font-size: 14px;
+    height: 25px;
+    line-height: 20px;
+    margin-bottom: 10px;
+    padding: 4px 6px;
+    vertical-align: middle;
+}
 
 .btn.btn-create { 
     background-color: #D14836;
@@ -417,6 +426,32 @@ border-bottom: 0px solid #DDDDDD;
   &[disabled] {
     text-shadow: 0 1px 0 rgba($black, 0.2);
     @include linear-gradient($btn-primary-background-color, $btn-primary-background-color-dark);
+    @include box-shadow((inset 0 1px 0 rgba($white, 0.33), inset 0 -1px 2px rgba($black, 0.2)));
+  }
+}
+
+.btn-primary-btn {
+  border: 1px solid $btn-primary-btn-border-color;
+  color: $yellow;
+  text-shadow: 0 1px 0 rgba($black, 0.2);
+  font-weight: bold;
+  @include linear-gradient($btn-primary-btn-background-color, $btn-primary-btn-background-color-dark);
+  @include box-shadow((inset 0 1px 0 rgba($white, 0.33), inset 0 -1px 2px rgba($black, 0.2)));
+  &[href] {
+    color: $white;
+  }
+  &:hover,
+  &:focus {
+    @include linear-gradient($btn-primary-btn-background-color, $btn-primary-btn-background-color-light);
+    @include box-shadow(inset 0 1px 0 rgba($white, 0.33));
+  }
+  &:active {
+    @include linear-gradient($btn-primary-btn-background-color-dark, $btn-primary-btn-background-color);
+    @include box-shadow(inset 0 1px 3px rgba($black, 0.2));
+  }
+  &[disabled] {
+    text-shadow: 0 1px 0 rgba($black, 0.2);
+    @include linear-gradient($btn-primary-btn-background-color, $btn-primary-btn-background-color-dark);
     @include box-shadow((inset 0 1px 0 rgba($white, 0.33), inset 0 -1px 2px rgba($black, 0.2)));
   }
 }
