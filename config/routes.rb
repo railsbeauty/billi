@@ -1,11 +1,11 @@
 Mau::Application.routes.draw do
-  devise_for :users
+  
   root :to => 'articles#index'
   resources :articles
   resources :dashboard
   resources :tags
   resources :comments
-  
+  devise_for :users,  controller: {omniauth_callbacks: "omniauth_callbacks"}
   resources :articles do
     resources :comments
   end

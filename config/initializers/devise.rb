@@ -1,5 +1,6 @@
 # Use this hook to configure devise mailer, warden hooks and so forth.
 # Many of these configuration options can be set straight in your model.
+require 'openid/store/filesystem'
 Devise.setup do |config|
   # ==> Mailer Configuration
   # Configure the e-mail address which will be shown in Devise::Mailer,
@@ -105,7 +106,7 @@ Devise.setup do |config|
   # db field (see migrations). Until confirmed new email is stored in
   # unconfirmed email column, and copied to email column on successful confirmation.
   config.reconfirmable = true
-
+  config.omniauth :twitter, "pYJyNBYhqvH51UOaAHbQwQ", "ybQKZl9yLMplW56xK74k3ntgXZsdFamtDO8D3bDUy8"
   # Defines which key will be used when confirming an account
   # config.confirmation_keys = [ :email ]
 

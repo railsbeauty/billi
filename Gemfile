@@ -31,7 +31,9 @@ gem 'devise'
 gem 'will_paginate'
 
 gem 'twitter-bootstrap-rails'
-
+gem "omniauth-twitter", "~> 0.0.16"
+gem 'omniauth'
+gem 'omniauth-openid'
 
  gem 'therubyracer', :platform => :ruby 
 
