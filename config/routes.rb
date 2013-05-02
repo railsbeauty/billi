@@ -5,7 +5,7 @@ Mau::Application.routes.draw do
   resources :dashboard
   resources :tags
   resources :comments
-  devise_for :users,  controller: {omniauth_callbacks: "omniauth_callbacks"}
+  devise_for :users,  controllers: {omniauth_callbacks: "omniauth_callbacks"}
   resources :articles do
     resources :comments
   end
