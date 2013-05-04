@@ -12,13 +12,13 @@
    <div style="margin-left:75px;margin-top:10px"> <%= f.label :email %></div>
    <div style="margin-left:75px;margin-top:10px"> <%= f.email_field :email %></div>
 
-
+ <% if f.object.password_required? %>
    <div style="margin-left:75px;margin-top:10px"> <%= f.label :password %></div>
    <div style="margin-left:75px;margin-top:10px"> <%= f.password_field :password %></div>
 
    <div <div style="margin-left:75px;margin-top:10px"> <%= f.label :password_confirmation %></div>
    <div style="margin-left:75px;margin-top:10px"> <%= f.password_field :password_confirmation %></div>
-
+<% end %>
    <div style="margin-left:75px;margin-top:20px"> <%= f.submit "Sign up",:class => 'btn btn-info btn-small' %></div>
    <% end %>
 
