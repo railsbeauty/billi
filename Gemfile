@@ -31,16 +31,11 @@ gem 'devise'
 gem 'will_paginate'
 
 gem 'twitter-bootstrap-rails'
-gem "omniauth", "~> 1.1.1"
-gem "omniauth-twitter", "~> 0.0.14"
-gem 'crack'
-gem 'oa-core'
-
  gem 'therubyracer', :platform => :ruby 
 
 # To use ActiveModel has_secure_password
 # gem 'bcrypt-ruby', '~> 3.0.0'
-
+gem 'omniauth-twitter'
 # To use Jbuilder templates for JSON
 # gem 'jbuilder'
 

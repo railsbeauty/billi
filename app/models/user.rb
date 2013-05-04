@@ -15,15 +15,15 @@ class User < ActiveRecord::Base
   devise :database_authenticatable, :registerable, :omniauthable,
    :recoverable, :rememberable, :trackable, :validatable
 
-  def self.from_omniauth(auth)
+ def self.from_omniauth(auth)
    where(auth.slice(:provider, :uid)).first_or_create do |user|
     user.provider = auth.provider
     user.uid = auth.uid
     user.username = auth.info.nickname
     end
   end
-  
-  def self.new_with_session(params, session)
+
+   def self.new_with_session(params, session)
     if session["devise.user_attritubes"]
       new(session["devise.user_attributes"], without_protection: true) do |user|
       user.attributes = params
@@ -37,5 +37,6 @@ class User < ActiveRecord::Base
   def password_required?
    super && provider.blank?
   end
+
 
 end
