@@ -1,7 +1,6 @@
 
 class ArticlesController < ApplicationController
     before_filter :is_user_admin, only: [:new, :create, :edit, :destroy]
-  
    
     def is_user_admin
       redirect_to(action: :index) unless current_user.try(:is_admin?) 
@@ -25,7 +24,6 @@ class ArticlesController < ApplicationController
       @related_articles = Article.joins(:taggings).where('articles.id != ?', @article.id).where(taggings: { tag_id: @article.tag_ids })           
       @article_popular =  Article.order('articles.impressions_count DESC').limit(5)
       
-
     end
 
 	  def new

@@ -11,8 +11,10 @@
               <li>  <%= time_tag(@article.created_at.in_time_zone("Asia/Calcutta")) %> </li>
               <li>   <%= @article.user.username if @article.user %></li>
               <li>
-                 <% unless @article.comments.empty? %>
+                 <% if !(@article.comments.empty?) %>
                  (<%= @article.comments.size %>) comments
+                 <% else %>
+                 (0) comment
                  <% end %>
                  </li>
                  <li>
