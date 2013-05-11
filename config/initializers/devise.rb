@@ -190,10 +190,13 @@ Devise.setup do |config|
   # config.scoped_views = false
    
  require 'omniauth-twitter'
+ require 'omniauth-facebook'
+ require 'omniauth-github'
+ require 'omniauth-google-oauth2'
  config.omniauth :twitter, "pYJyNBYhqvH51UOaAHbQwQ", "ybQKZl9yLMplW56xK74k3ntgXZsdFamtDO8D3bDUy8"
- require "omniauth-facebook"
  config.omniauth :facebook, "156362831203926", "8db9a286d58e8de9967200d232dd29d5"
-
+ config.omniauth :github, "25893df5c794f96e48b3", "fb82c7a8695627d4c6c08d9b9e70f821ab500621"
+ config.omniauth :google_oauth2, "632671525498", "EokrsR-Ie9pp78taTBbwpH5e", { access_type: "offline", approval_prompt: "" }
 
   # Configure the default scope given to Warden. By default it's the first
   # devise role declared in your routes (usually :user).

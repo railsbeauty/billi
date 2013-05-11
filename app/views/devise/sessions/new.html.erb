@@ -1,8 +1,15 @@
 
-<div style="width:420px;height:300px;border:1px solid #D8DEE2;border-radius: 8px 8px 8px 8px; solid;margin-left:350px;margin-top:100px;background-color:whilte;font-weight: bold;box-shadow: 0 0 00px 0px #D4C0AA inset;height:350px">
-	<div class="auth-form-header"> <h4>Welcome to learning experience</h4> </div>
+<div style="width:420px;height:300px;border:1px solid #D8DEE2;border-radius: 8px 8px 8px 8px; solid;margin-left:350px;margin-top:10px;background-color:whilte;font-weight: bold;box-shadow: 0 0 00px 0px #D4C0AA inset;height:430px">
+	<div class="auth-form-header"> <h4>Sign in to learning experience</h4> </div>
+  <div style="margin-left:12px;margin-top:10px;padding-left: 10 px">
+	<%= link_to "Sign in with Twitter", user_omniauth_authorize_path(:twitter), :class => 'zocial twitter' %>
+	<%= link_to "Sign in with Facebook", user_omniauth_authorize_path(:facebook), :class => 'zocial facebook' %>
+	<%= link_to "Sign in with Google", user_omniauth_authorize_path(:google_oauth2), :class => 'zocial google' %>
+	<%= link_to "Sign in with Github", user_omniauth_authorize_path(:github), :class => 'zocial github' %>
+  </div>
+    <hr style="border: 1px normal #E0E0F0; margin-top:10px">
 	  <%= form_for(resource, :as => resource_name, :url => session_path(resource_name)) do |f| %>
-	     <div style="margin-left:42px;margin-top:10px;">  <%= f.label :email or  f.label :username %><br /></div>
+	     <div style="margin-left:42px;margin-top:20px;">  <%= f.label :email or  f.label :username %><br /></div>
 	     <div style="margin-left:42px;margin-top:-10px;"><%= f.email_field :email, :size => "80%", :autofocus => true %></div>
 
 	     <div style="margin-left:42px;margin-top:10px;"> <strong> <%= f.label :password %> </strong><br /> </div>

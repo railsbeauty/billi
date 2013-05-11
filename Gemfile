@@ -37,6 +37,8 @@ gem 'twitter-bootstrap-rails'
 # gem 'bcrypt-ruby', '~> 3.0.0'
 gem 'omniauth-twitter'
 gem "omniauth-facebook"
+gem 'omniauth-github'
+gem 'omniauth-google-oauth2'
 # To use Jbuilder templates for JSON
 # gem 'jbuilder'
 

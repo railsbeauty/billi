@@ -35,4 +35,5 @@ Mau::Application.configure do
 
   # Expands the lines which load the assets
   config.assets.debug = true
+  SOCIAL_AUTH_REDIRECT_IS_HTTPS = true
 end
