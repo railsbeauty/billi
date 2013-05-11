@@ -15,7 +15,7 @@ Devise.setup do |config|
   # :mongoid (bson_ext recommended) by default. Other ORMs may be
   # available as additional gems.
   require 'devise/orm/active_record'
-  require "omniauth-twitter"
+ 
   # ==> Configuration for any authentication mechanism
   # Configure which keys are used when authenticating a user. The default is
   # just :email. You can configure it to use [:username, :subdomain], so for
@@ -189,7 +189,11 @@ Devise.setup do |config|
   # are using only default views.
   # config.scoped_views = false
    
+ require 'omniauth-twitter'
  config.omniauth :twitter, "pYJyNBYhqvH51UOaAHbQwQ", "ybQKZl9yLMplW56xK74k3ntgXZsdFamtDO8D3bDUy8"
+ require "omniauth-facebook"
+ config.omniauth :facebook, "156362831203926", "8db9a286d58e8de9967200d232dd29d5"
+
 
   # Configure the default scope given to Warden. By default it's the first
   # devise role declared in your routes (usually :user).

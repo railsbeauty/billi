@@ -1,5 +1,5 @@
 class User < ActiveRecord::Base
-  attr_accessible :username, :email, :password, :password_confirmation, :remember_me
+  attr_accessible :username, :email, :password, :password_confirmation, :remember_me,:username, :provider, :uid
   attr_accessible :title, :body
   validates_confirmation_of :password
   validates_presence_of :password, :on => :create
@@ -15,22 +15,43 @@ class User < ActiveRecord::Base
   devise :database_authenticatable, :registerable, :omniauthable,
    :recoverable, :rememberable, :trackable, :validatable
 
- def self.from_omniauth(auth)
-   where(auth.slice(:provider, :uid)).first_or_create do |user|
-    user.provider = auth.provider
-    user.uid = auth.uid
-    user.username = auth.info.nickname
+ def self.find_for_twitter_oauth(auth, signed_in_resource=nil)
+ 
+  user = User.where(:provider => auth.provider, :uid => auth.uid).first
+  if user
+    return user
+  else
+    registered_user = User.where(:email => auth.uid + "@twitter.com").first
+    if registered_user
+      return registered_user
+    else
+      user = User.create(username:auth.info.nickname,
+        provider:auth.provider,
+        uid:auth.uid,
+        email:auth.uid+"@twitter.com",
+        password:Devise.friendly_token[0,20],
+      )
     end
   end
+end
 
-   def self.new_with_session(params, session)
-    if session["devise.user_attritubes"]
-      new(session["devise.user_attributes"], without_protection: true) do |user|
-      user.attributes = params
-      user.valid?
-      end
+ def self.find_for_facebook_oauth(auth, signed_in_resource=nil)
+    user = User.where(:provider => auth.provider, :uid => auth.uid).first
+    if user
+      return user
     else
-     super
+      registered_user = User.where(:email => auth.info.email).first
+      if registered_user
+        return registered_user
+      else
+        user = User.create(username:auth.extra.raw_info.name,
+                            provider:auth.provider,
+                            uid:auth.uid,
+                            email:auth.info.email,
+                            password:Devise.friendly_token[0,20],
+                          )
+      end
+       
     end
   end
 
@@ -38,6 +59,10 @@ class User < ActiveRecord::Base
    super && provider.blank?
   end
  
+ def email_required?
+  super && provider.blank?
+ end
+
   def update_with_password(params, *options)
     if encrypted_password.blank?
       update_attributes(params, *options)

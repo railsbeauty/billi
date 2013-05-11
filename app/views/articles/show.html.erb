@@ -39,7 +39,7 @@
 
        <div id="fabs">
          <ul id="fabula">
-           <div style="margin-left:540px;margin-top:5px; font-size:1.2em;color:#1fb2e8;">  Viewed: <strong><%=@article.impression_count %> times </strong> </div>
+           <div style="margin-left:540px;margin-top:5px; font-size:1.2em;color:#1fb2e8;">  Viewed: <strong> <%= @article.impressions_count %> times </strong> </div>
            <div style="margin-left:540px;margin-top:5px; font-size:1.2em;color:#1fb2e8;">
            <% if (@article.created_at != @article.updated_at) %>
            edit: <strong> <%= time_ago_in_words(@article.updated_at) %>  ago </strong>
@@ -67,10 +67,10 @@
       
        <div class="span3">    
          <div id="popular"> 
-          <% if !@article_popular.empty? %>
+          <% if !@most_viewed_articles.empty? %>
             <div id="headerpopular"> most viewed articles </div>
-             <% @article_popular.each do |article_popular| %>
-              <div id="popular-title">  <%= link_to  truncate(article_popular.title, :length => 35, :separator => ' '),  article_path(article_popular) %></div>
+             <% @most_viewed_articles.each do |most_viewed_articles| %>
+              <div id="popular-title">  <%= link_to  truncate(most_viewed_articles.title, :length => 35, :separator => ' '),  article_path(most_viewed_articles) %></div>
              <% end %>
           <% end %>
         </div>

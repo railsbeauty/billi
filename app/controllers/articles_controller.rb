@@ -22,7 +22,7 @@ class ArticlesController < ApplicationController
     def show
       @article = Article.find(params[:id])
       @related_articles = Article.joins(:taggings).where('articles.id != ?', @article.id).where(taggings: { tag_id: @article.tag_ids })           
-      @article_popular =  Article.order('articles.impressions_count DESC').limit(5)
+      @most_viewed_articles = Article.order('articles.impressions_count DESC').limit(5)
       
     end
 
