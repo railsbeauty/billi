@@ -1,15 +1,17 @@
-
- <div style="width:310p;height:560px;border:1px solid #D8DEE2;border-radius: 8px 8px 8px 8px; solid;margin-left:350px;margin-top:10px;background-color:whilte;font-weight: bold;box-shadow: 0 0 00px 0px #D4C0AA inset;">
+ <div style="width:760px;height:400px;border:1px solid #D8DEE2;border-radius: 8px 8px 8px 8px; solid;margin-left:250px;margin-top:50px;background-color:whilte;font-weight: bold;box-shadow: 0 0 00px 0px #D4C0AA inset;">
 
 <div class="auth-form-header" margin-left:75px> <h4>Sign up for learning experience</h4> </div>
 
- <div style="margin-left:12px;margin-top:10px;padding-left: 10 px">
-   <%= link_to "Sign in with Twitter", user_omniauth_authorize_path(:twitter), :class => 'zocial twitter' %>
-   <%= link_to "Sign in with Facebook", user_omniauth_authorize_path(:twitter), :class => 'zocial facebook' %>
-   <%= link_to "Sign in with Google", user_omniauth_authorize_path(:twitter), :class => 'zocial google' %>
-   <%= link_to "Sign in with Github", user_omniauth_authorize_path(:twitter), :class => 'zocial github' %>
+ <div style="margin-left:10px;margin-top:20px;padding-left: 10 px;">
+     <%= link_to "Sign in with Twitter", user_omniauth_authorize_path(:twitter), :class => 'zocial twitter' %> 
+
+     <%= link_to "Sign in with Google", user_omniauth_authorize_path(:google_oauth2), :class => 'zocial google' %> 
+   
+     <%= link_to "Sign in with Facebook", user_omniauth_authorize_path(:facebook), :class => 'zocial facebook' %>
+     <%= link_to "Sign in with Github", user_omniauth_authorize_path(:github), :class => 'zocial github' %>
   </div>
-  <hr style="border: 1px normal #E0E0F0; margin-top:10px">
+
+  <hr style="border: 1px normal #E0E0F0; margin-top:20px">
 
 <%= form_for(resource, :as => resource_name, :url => registration_path(resource_name)) do |f| %>
   
@@ -17,15 +19,15 @@
    <div style="margin-left:75px; margin-top:20px;"><%= f.label :Username %></div>
    <div style="margin-left:75px;margin-top:10px"><%= f.text_field :username, :autofocus => true %></div>
 
-   <div style="margin-left:75px;margin-top:10px"> <%= f.label :email %></div>
-   <div style="margin-left:75px;margin-top:10px"> <%= f.email_field :email %></div>
+   <div style="margin-left:390px;margin-top: -75px"> <%= f.label :email %></div>
+   <div style="margin-left:390px;margin-top: 8px"> <%= f.email_field :email %></div>
 
  <% if f.object.password_required? %>
    <div style="margin-left:75px;margin-top:10px"> <%= f.label :password %></div>
    <div style="margin-left:75px;margin-top:10px"> <%= f.password_field :password %></div>
 
-   <div <div style="margin-left:75px;margin-top:10px"> <%= f.label :password_confirmation %></div>
-   <div style="margin-left:75px;margin-top:10px"> <%= f.password_field :password_confirmation %></div>
+   <div <div style="margin-left:390px;margin-top:-70px"> <%= f.label :password_confirmation %></div>
+   <div style="margin-left:390px;margin-top:7px"> <%= f.password_field :password_confirmation %></div>
 <% end %>
    <div style="margin-left:75px;margin-top:20px"> <%= f.submit "Sign up",:class => 'btn btn-info btn-small' %></div>
    <% end %>

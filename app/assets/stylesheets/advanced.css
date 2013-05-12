@@ -1,0 +1,62 @@
+@charset "UTF-8";
+
+/*!
+	Zocial Butons
+	http://zocial.smcllns.com
+	by Sam Collins (@smcllns)
+	License: http://opensource.org/licenses/mit-license.php
+	
+	You are free to use and modify, as long as you keep this license comment intact or link back to zocial.smcllns.com on your site.
+*/
+	
+/* Reference icons from font-files */
+
+@font-face {
+	font-family: 'zocial';
+	font-style: normal;
+	font-weight: normal;
+	src: url('zocial-regular-webfont.eot');
+	src: url('zocial-regular-webfont.eot?#iefix') format('embedded-opentype'),
+		url('zocial-regular-webfont.woff') format('woff'),
+		url('zocial-regular-webfont.ttf') format('truetype'),
+		url('zocial-regular-webfont.svg#ZocialRegular') format('svg');
+	unicode-range: U+0-U+10FFFF;
+}
+
+a.button-dribbble:before,
+a.button-facebook:before,
+a.button-googleplus:before,
+a.button-linkedin:before,
+a.button-pinterest:before,
+a.button-rss:before,
+a.button-tumblr:before,
+a.button-twitter:before {
+	content: "";
+	border-right: 0.075em solid rgba(0,0,0,0.1);
+	float: left;
+	font: 120%/1.4 zocial;
+	font-style: normal;
+	font-weight: normal;
+	padding: 0 0.5em 0 0;
+	text-align: center;
+	text-decoration: none;
+	text-transform: none;
+	-moz-box-shadow: 0.075em 0 0 rgba(255,255,255,0.25);
+	-webkit-box-shadow: 0.075em 0 0 rgba(255,255,255,0.25);
+	box-shadow: 0.075em 0 0 rgba(255,255,255,0.25);
+	-moz-font-smoothing: antialiased;
+	-webkit-font-smoothing: antialiased;
+	font-smoothing: antialiased;
+}
+
+/* Button icon */
+/* Icon characters are stored in unicode private area */
+
+a.button-dribbble:before {content: "D";}
+a.button-facebook:before {content: "f";}
+a.button-googleplus:before {content: "+";}
+a.button-linkedin:before {content: "L";}
+a.button-pinterest:before {content: "1";}
+a.button-rss:before {content: "R";}
+a.button-tumblr:before {content: "t";}
+a.button-twitter:before {content: "T";}
