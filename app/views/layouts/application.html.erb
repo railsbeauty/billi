@@ -25,6 +25,7 @@
         <div> <a class="brand" href="#"> <h4>Learning Experience </h4></a></div>
         <div class="nav-collapse">
           <ul class="nav nav-pills nav-stacked" style="font-size: 1.2em;font-weight: normal;">
+            <% if user_signed_in? %>
             <li class=""><%= link_to "Ruby" %></li>
             <li class=""><%= link_to "Rails" %></li>
             <li class=""><%= link_to "JavaScript" %></li>
@@ -32,18 +33,15 @@
             <li class=""><%= link_to "BackboneJs" %></li>
             <li class=""><%= link_to "Videos" %></li>
             <li class=""><%= link_to "Blog", articles_path %></li>  
-
-
+            <% end %>       
           </ul>
           <ul class = "nav pull-right">
          <% if user_signed_in? %>
-            
             <li id="fat-menu" class="dropdown">
               <a href="#" class="dropdown-toggle" data-toggle="dropdown">
-                Account <b class="caret"></b>
+             <%= current_user.username %> <b class="caret"></b>
               </a>
               <ul class="dropdown-menu">
-                <li><%= link_to  current_user.username %></li>
                 <li><%= link_to "Edit Profile", edit_user_registration_path %></li>
                  <li><%= link_to "Sign Out", destroy_user_session_path, method: :delete %></li>
               </ul>
