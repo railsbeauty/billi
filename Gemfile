@@ -31,7 +31,7 @@ gem 'devise'
 gem 'will_paginate'
 
 gem 'twitter-bootstrap-rails'
- gem 'therubyracer', :platform => :ruby 
+ gem 'therubyracer', :platform => :ruby
 
 # To use ActiveModel has_secure_password
 # gem 'bcrypt-ruby', '~> 3.0.0'
@@ -39,6 +39,9 @@ gem 'omniauth-twitter'
 gem "omniauth-facebook"
 gem 'omniauth-github'
 gem 'omniauth-google-oauth2'
+gem 'ckeditor_rails'
+
+
 # To use Jbuilder templates for JSON
 # gem 'jbuilder'
 

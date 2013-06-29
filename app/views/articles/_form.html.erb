@@ -10,7 +10,7 @@
   </div>
   <div>
     <%= f.label :body, :class => 'control-label' %>
-   <%= f.text_area :body, input_html: { class: 'redactor', rows: '4' } %>
+   <%= f.text_area :body, :class => 'ckeditor' %>
   <%= f.label :tag_list, :style => "margin-top:10px" %><br />
   <%= f.text_field :tag_list, :style => "width:730px; height:30px; border: 1px solid #66c9ee;margin-top:0px; background-color:#FFFFFF;" %>
   <div style="margin-top: 20px">
