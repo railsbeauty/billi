@@ -26,6 +26,7 @@ group :assets do
  # gem 'uglifier', '>= 1.0.3'
 end
 
+gem "cancan"
 gem 'jquery-rails'
 gem 'devise'
 gem 'will_paginate'

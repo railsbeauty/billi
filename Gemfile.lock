@@ -33,6 +33,7 @@ GEM
     bcrypt-ruby (3.0.1)
     bcrypt-ruby (3.0.1-x86-mingw32)
     builder (3.0.4)
+    cancan (1.6.10)
     ckeditor_rails (4.1.2)
       railties (>= 3.0)
     client_side_validations (3.2.5)
@@ -164,6 +165,7 @@ PLATFORMS
   x86-mingw32
 
 DEPENDENCIES
+  cancan
   ckeditor_rails
   client_side_validations
   coffee-rails (~> 3.2.1)

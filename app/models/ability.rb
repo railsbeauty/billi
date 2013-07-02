@@ -4,7 +4,7 @@ class Ability
   def initialize(user)
     user ||= User.new # guest user
 
-    if user.editor?
+    if user.role == 'editor'
       can :manage, :all
     else
       can :read, :all
