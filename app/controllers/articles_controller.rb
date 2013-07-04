@@ -14,9 +14,12 @@ class ArticlesController < ApplicationController
    end
 
 	  def index
-		  @articles = Article.all()
+		  #@articles = Article.where(is_draft:  false)
+     # @articles = Article.all
       @article_titles = Article.first(10)
       @tags = Tag.all
+      @articles = Article.paginate(:page => params[:page], :per_page => 5)
+
 	  end
 
     def show

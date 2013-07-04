@@ -182,4 +182,4 @@ DEPENDENCIES
   therubyracer
   turn (= 0.8.2)
   twitter-bootstrap-rails
-  will_paginate
+  will_paginate (~> 3.0.0)

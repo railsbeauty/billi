@@ -1,5 +1,6 @@
 class User < ActiveRecord::Base
-  attr_accessible :username, :email, :password, :password_confirmation, :remember_me,:username, :provider, :uid
+  attr_accessible :username, :email, :password, :password_confirmation,
+  :remember_me, :username, :provider, :uid
   attr_accessible :title, :body
   validates_confirmation_of :password
   validates_presence_of :password, :on => :create

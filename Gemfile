@@ -29,10 +29,10 @@ end
 gem "cancan"
 gem 'jquery-rails'
 gem 'devise'
-gem 'will_paginate'
+gem 'will_paginate', '~> 3.0.0'
 
 gem 'twitter-bootstrap-rails'
- gem 'therubyracer', :platform => :ruby
+gem 'therubyracer', :platform => :ruby
 
 # To use ActiveModel has_secure_password
 # gem 'bcrypt-ruby', '~> 3.0.0'
