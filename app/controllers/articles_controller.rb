@@ -19,7 +19,6 @@ class ArticlesController < ApplicationController
       @article_titles = Article.first(10)
       @tags = Tag.all
       @articles = Article.paginate(:page => params[:page], :per_page => 5)
-
 	  end
 
     def show
